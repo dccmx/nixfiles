@@ -1,0 +1,48 @@
+## 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+##
+alias ls='ls -hp --time-style=locale --color'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+##
+alias back='cd $OLDPWD'
+alias cd..='cd ..'
+alias df='df -h'
+alias du='du -h -c'
+alias mkdir='mkdir -p -v'
+alias ..='cd ..'
+## 
+alias grep='grep --color=auto'
+alias ncmpc='ncmpc -c'
+alias daemons='ls /var/run/daemons'
+alias ping='ping -c 5'
+alias nano='nano -w'
+alias more='less'
+
+##
+alias pgrep="pgrep -l"
+alias recent="ls -lAt | head"
+alias Xdefaults="xrdb -load ~/.Xdefaults"
+
+## Sudo
+alias update='sudo apt-get update'
+alias install='sudo apt-get install'
+alias upgrade='sudo apt-get upgrade'
+
+##
+alias info='info --vi-keys'
+
+##
+alias c='clear'
+
+##
+alias shut='sudo shutdown -h'
+alias rest='sudo shutdown -r'
+
+##
+alias home='cd ~'
+##
+alias home='cd ~'
