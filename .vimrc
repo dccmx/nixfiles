@@ -159,16 +159,19 @@
 	let NERDTreeWinPos="right"
 	nmap <leader>f :NERDTreeToggle<CR>
 
+    "NERD_Comment{
+        let NERDCommentWholeLinesInVMode=1
+    "}
 
-	"""""""""""""""""""""""""""""""""""
-	"ctags
-	""""""""""""""""""""""""""""""""""""
-	set tags=./tags,tags,../tags,../../tags
-	cs add ./cscope.out ./
-	set tags+=/usr/include/c++/tags
-	cs add usr/include/c++/cscope.out /usr/include/c++
-	set tags+=/usr/include/linux/tags
-	cs add /usr/include/linux/cscope.out /usr/include/linux
+
+	"ctags{
+	    set tags=./tags,tags,../tags,../../tags
+        cs add ./cscope.out ./
+        set tags+=/usr/include/c++/tags
+        cs add usr/include/c++/cscope.out /usr/include/c++
+        set tags+=/usr/include/linux/tags
+        cs add /usr/include/linux/cscope.out /usr/include/linux
+    "}
 
 
 	""""""""""""""""""""""""""""
@@ -191,10 +194,8 @@
 
 
 " Mappings {
-
-    " space / shift-space scroll in normal mode
-    noremap <S-space> <C-b>
-    noremap <space> <C-f>
+    " Make p in Visual mode replace the selected text with the "" register.
+    vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
     " Make Arrow Keys Useful Again {
         map <down> <ESC>:NERDTreeToggle<RETURN>
