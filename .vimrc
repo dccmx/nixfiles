@@ -14,6 +14,9 @@
     syntax on " syntax highlighting on
     color desert    
     set guifont=Consolas
+    set fileencoding=utf-8
+    let &termencoding=&encoding
+    set fileencodings=utf-8,gbk,ucs-bom,cp936,default
 " }
 
 " General {
