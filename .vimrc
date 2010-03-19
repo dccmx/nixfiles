@@ -69,7 +69,6 @@
 " Text Formatting/Layout {
     set completeopt=longest,menu
     set expandtab " no real tabs please!
-    autocmd FileType * set formatoptions-=ro
     set ignorecase " case insensitive by default
     set nowrap " do not wrap line
     set autoindent
@@ -143,48 +142,44 @@
 	""""""""""""""""""""""""""""
 	let NERDChristmasTree=1
 	let NERDTreeAutoCenter=1
-	let NERDTreeBookmarksFile=$VIM.'\Data\NerdBookmarks.txt'
+	let NERDTreeBookmarksFile=$HOME.'/.vim/.NerdBookmarks.txt'
 	let NERDTreeMouseMode=2
 	let NERDTreeShowBookmarks=1
 	let NERDTreeShowFiles=1
 	let NERDTreeShowHidden=0
 	let NERDTreeShowLineNumbers=1
 	let NERDTreeQuitOnOpen=1
-	let NERDTreeWinSize=31
+	let NERDTreeWinSize=40
 	let NERDTreeHighlightCursorline=1
 	let NERDTreeWinPos="right"
-	nmap <leader>f :NERDTreeToggle<CR>
 
     "NERD_Comment{
         let NERDCommentWholeLinesInVMode=1
     "}
 
 
-	"ctags{
+	"ctags and cscope{
 	    set tags=./tags,tags,../tags,../../tags
         cs add ./cscope.out ./
         set tags+=/usr/include/c++/tags
-        cs add usr/include/c++/cscope.out /usr/include/c++
+        cs add usr/include/c++/cscope.out /usr/include/c++/
         set tags+=/usr/include/linux/tags
         cs add /usr/include/linux/cscope.out /usr/include/linux
+        set cscopequickfix=g-,s-,c-,d-,i-,t-,e-
     "}
 
-
-	""""""""""""""""""""""""""""
-	"cscope 
-	""""""""""""""""""""""""""""
-	set cscopequickfix=g-,s-,c-,d-,i-,t-,e-
-
-	"let OmniCpp_DefaultNamespaces = ["std"]
-	"let OmniCpp_GlobalScopeSearch = 1 " 0 or 1
-	"let OmniCpp_NamespaceSearch = 1 " 0 , 1 or 2
-	"let OmniCpp_DisplayMode = 1
-	"let OmniCpp_ShowScopeInAbbr = 0
-	"let OmniCpp_ShowPrototypeInAbbr = 1
-	"let OmniCpp_ShowAccess = 1
-	"let OmniCpp_MayCompleteDot = 1
-	"let OmniCpp_MayCompleteArrow = 1
-	"let OmniCpp_MayCompleteScope = 1
+    "OmniCpp {
+	    "let OmniCpp_MayCompleteScope = 1
+        "let OmniCpp_DefaultNamespaces = ["std"]
+        "let OmniCpp_GlobalScopeSearch = 1 " 0 or 1
+        "let OmniCpp_NamespaceSearch = 1 " 0 , 1 or 2
+        "let OmniCpp_DisplayMode = 1
+        "let OmniCpp_ShowScopeInAbbr = 0
+        "let OmniCpp_ShowPrototypeInAbbr = 1
+        "let OmniCpp_ShowAccess = 1
+        "let OmniCpp_MayCompleteDot = 1
+        "let OmniCpp_MayCompleteArrow = 1
+    "}
 
 " }
 
@@ -207,26 +202,25 @@
             exec ":bdelete ".s:buf_nr
         endfunction
 
+        nmap <leader>s :w<CR>
+        nmap <leader>x <Esc>:q<CR>
+        nmap <leader>qa :qall<CR>
     " }
+
     nmap <leader>a <Esc>:A!<CR>
     nnoremap <silent> <F3> :Grep<CR> 
 	nmap <leader>qw :cw<CR>
 	nmap <leader>qn :cn<CR>
 	nmap <leader>qp :cp<CR>
 	nmap <leader>qc :cclose<CR>
-	nmap <leader>s :w<CR>
-	nmap <leader>x <Esc>:q<CR>
-	nmap <leader>qa :qall<CR>
 	nmap <leader><space> :make<CR>
 
-
-	""""""""""""""""""""""""""""
-	"Window Switch
-	""""""""""""""""""""""""""""
-	noremap <C-j> <C-w>j
-	noremap <C-k> <C-w>k
-	noremap <C-h> <C-w>h
-	noremap <C-l> <C-w>l
+	"Window Switch{
+	    noremap <C-j> <C-w>j
+        noremap <C-k> <C-w>k
+        noremap <C-h> <C-w>h
+        noremap <C-l> <C-w>l
+    "}
 
 	noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm10gt "Remove the Windows ^M
 
@@ -238,21 +232,32 @@
 
 	nmap <C-t> :colder<CR>:cc<CR>
 
+    "0 or s: Find this C symbol
+    "1 or g: Find this definition
+    "2 or d: Find functions called by this function
+    "3 or c: Find functions calling this function
+    "4 or t: Find this text string
+    "6 or e: Find this egrep pattern
+    "7 or f: Find this file
+    "8 or i: Find files #including this file
 	nmap <C-_>s :cs find s <C-r>=expand("<cword>")<CR><CR> 
-	nmap <C-_>g :cs find g <C-r>=expand("<cword>")<CR><CR> 
-	nmap <C-_>c :cs find c <C-r>=expand("<cword>")<CR><CR> 
-	nmap <C-_>t :cs find t <C-r>=expand("<cword>")<CR><CR> 
-	nmap <C-_>e :cs find e <C-r>=expand("<cword>")<CR><CR> 
+	nmap <C-_>d :cs find g <C-r>=expand("<cword>")<CR><CR> 
+	nmap <C-_>c :cs find d <C-r>=expand("<cword>")<CR><CR>
+	nmap <C-_>t :cs find c <C-r>=expand("<cword>")<CR><CR> 
+	nmap <C-_>e :cs find t <C-r>=expand("<cword>")<CR><CR> 
+	nmap <C-_>g :cs find e <C-r>=expand("<cword>")<CR><CR> 
 	nmap <C-_>f :cs find f <C-r>=expand("<cfile>")<CR><CR> 
 	nmap <C-_>i :cs find i ^<C-r>=expand("<cfile>")<CR>$<CR> 
-	nmap <C-_>d :cs find d <C-r>=expand("<cword>")<CR><CR>
 
 " }
 
 " Autocommands {
+
+    autocmd FileType * set formatoptions-=ro
+
     " Reread configuration of Vim if .vimrc is saved {
     augroup VimConfig
-        au!
+        autocmd!
         autocmd BufWritePost ~/.vimrc       so ~/.vimrc
         autocmd BufWritePost vimrc          so ~/.vimrc
     augroup END
@@ -268,7 +273,7 @@ if has("gui_running")
     "set guioptions-=L
     set guioptions-=m
     set guioptions-=T
-    au GUIEnter * simalt ~x "启动时最大化窗口
+    autocmd GUIEnter * simalt ~x "启动时最大化窗口
 
 endif
 
