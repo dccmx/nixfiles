@@ -31,7 +31,7 @@
     " ignore these list file extensions
     set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,
                     \*.jpg,*.gif,*.png
-    set wildmode=list:longest " turn on wild mode huge list
+    "set wildmode=list:longest " turn on wild mode huge list
     set autowrite
 " }
 
@@ -125,15 +125,8 @@
 	    let g:Tb_ForceSyntaxEnable=1
         let g:Tb_MaxSize=2
         let g:Tb_TabWrap=1
-        map <C-F4> <ESC>:call CloseTab()<CR>
-        func! CloseTab()
-            let s:buf_nr = bufnr("%")
-            echo s:buf_nr
-            exec ":Tbbp "
-            exec ":bdelete ".s:buf_nr
-        endfunction
-        autocmd! BufEnter * nested call Test()
-        func! Test()
+        autocmd! BufEnter * nested call TestTabbar()
+        func! TestTabbar()
             if bufname("%") == "-TabBar-"
                 wincmd j " 跳到下面的視窗
             endif
@@ -206,7 +199,14 @@
         map <right> <ESC>:bn!<CR>
         map <left> <ESC>:bp!<CR>
         map <space> <ESC>:b#<CR>
-        map <leader>bd <ESC>:bd<CR>
+        map <leader>bd <ESC>:call CloseTab()<CR>
+        func! CloseTab()
+            let s:buf_nr = bufnr("%")
+            "echo s:buf_nr
+            exec ":Tbbp "
+            exec ":bdelete ".s:buf_nr
+        endfunction
+
     " }
     nmap <leader>a <Esc>:A!<CR>
     nnoremap <silent> <F3> :Grep<CR> 
@@ -218,15 +218,6 @@
 	nmap <leader>x <Esc>:q<CR>
 	nmap <leader>qa :qall<CR>
 	nmap <leader><space> :make<CR>
-
-	func! CloseTab()
-		let s:buf_nr = bufnr("%")
-		echo s:buf_nr
-		exec ":Tbbp "
-		exec ":bdelete ".s:buf_nr
-	endfunction
-	map <F9> <ESC>:call CloseTab()<CR>
-
 
 
 	""""""""""""""""""""""""""""
@@ -258,6 +249,15 @@
 
 " }
 
+" Autocommands {
+    " Reread configuration of Vim if .vimrc is saved {
+    augroup VimConfig
+        au!
+        autocmd BufWritePost ~/.vimrc       so ~/.vimrc
+        autocmd BufWritePost vimrc          so ~/.vimrc
+    augroup END
+    "}
+"}
 
 if has("gui_running")
 
