@@ -1,0 +1,2 @@
+#!/bin/bash
+enca -L zh_CN -x utf8 *
