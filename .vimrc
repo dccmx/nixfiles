@@ -269,7 +269,7 @@ if has("gui_running")
 
     set guifont=Consolas
     "把gui的右边的滑动条去掉
-    "set guioptions-=r
+    set guioptions-=r
     "把gui的左边的滑动条去掉
     "set guioptions-=L
     set guioptions-=m
