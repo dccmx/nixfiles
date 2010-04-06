@@ -190,8 +190,8 @@
     vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
     " Make Arrow Keys Useful Again {
-        map <down> <ESC>:NERDTreeToggle<RETURN>
-        map <up> <ESC>:Tlist<RETURN>
+        map <down> <ESC>:bd<CR>
+        map <up> <ESC>:Tlist<CR>
         map <right> <ESC>:bn!<CR>
         map <left> <ESC>:bp!<CR>
         map <space> <ESC>:b#<CR>
@@ -209,6 +209,8 @@
     " }
 
     nmap <leader>a <Esc>:A!<CR>
+    nmap <leader>t <Esc>:Tlist<CR>
+    nmap <leader>f <Esc>:NERDTreeToggle<CR>
     nnoremap <silent> <F3> :Grep<CR> 
 	nmap <leader>qw :cw<CR>
 	nmap <leader>qn :cn<CR>
