@@ -29,8 +29,7 @@
     set noerrorbells " don't make noise
     set wildmenu " turn on command line completion wild style
     " ignore these list file extensions
-    set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,
-                    \*.jpg,*.gif,*.png
+    set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
     "set wildmode=list:longest " turn on wild mode huge list
     set autowrite
 " }
@@ -76,8 +75,7 @@
     set cindent
     set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
     set smartcase " if there are caps, go case-sensitive
-    set shiftwidth=4 " auto-indent amount when using cindent, 
-                      " >>, << and stuff like that
+    set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
     set tabstop=4 " real tabs should be 8, and they will show with  set list on
 " }
@@ -133,26 +131,26 @@
         endfunction
 	"}
 
-	"yank ring
-	map <leader>y :YRShow<CR>
-	let g:yankring_history_dir = '$HOME/.vim/'
-	let g:yankring_history_file = '.yankring_history'
+	"yank ring {
+	    map <leader>y :YRShow<CR>
+        let g:yankring_history_dir = '$HOME/.vim/'
+        let g:yankring_history_file = '.yankring_history'
+    "}
 
-	""""""""""""""""""""""""""""
-	"NERD tree
-	""""""""""""""""""""""""""""
-	let NERDChristmasTree=1
-	let NERDTreeAutoCenter=1
-	let NERDTreeBookmarksFile=$HOME.'/.vim/.NerdBookmarks.txt'
-	let NERDTreeMouseMode=2
-	let NERDTreeShowBookmarks=1
-	let NERDTreeShowFiles=1
-	let NERDTreeShowHidden=0
-	let NERDTreeShowLineNumbers=1
-	let NERDTreeQuitOnOpen=1
-	let NERDTreeWinSize=40
-	let NERDTreeHighlightCursorline=1
-	let NERDTreeWinPos="right"
+	"NERD Tree {
+	    let NERDChristmasTree=1
+        let NERDTreeAutoCenter=1
+        let NERDTreeBookmarksFile=$HOME.'/.vim/.NerdBookmarks.txt'
+        let NERDTreeMouseMode=2
+        let NERDTreeShowBookmarks=1
+        let NERDTreeShowFiles=1
+        let NERDTreeShowHidden=0
+        let NERDTreeShowLineNumbers=1
+        let NERDTreeQuitOnOpen=1
+        let NERDTreeWinSize=40
+        let NERDTreeHighlightCursorline=1
+        let NERDTreeWinPos="right"
+    "}
 
     "NERD_Comment{
         let NERDCommentWholeLinesInVMode=1
