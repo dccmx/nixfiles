@@ -189,7 +189,7 @@
 
     " Make Arrow Keys Useful Again {
         map <down> <ESC>:bd<CR>
-        map <up> <ESC>:Tlist<CR>
+        map <up> <ESC>:e noname<CR>
         map <right> <ESC>:bn!<CR>
         map <left> <ESC>:bp!<CR>
         map <space> <ESC>:b#<CR>
@@ -271,7 +271,7 @@ if has("gui_running")
     "把gui的右边的滑动条去掉
     set guioptions-=r
     "把gui的左边的滑动条去掉
-    "set guioptions-=L
+    set guioptions-=L
     set guioptions-=m
     set guioptions-=T
     autocmd GUIEnter * simalt ~x "启动时最大化窗口
