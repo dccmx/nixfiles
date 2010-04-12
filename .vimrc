@@ -1,10 +1,9 @@
 " Modeline and Notes {
-"   vim: set foldmarker={,} foldlevel=0 :
+"   vim:foldmethod=marker:foldmarker={,}:foldlevel=0 :
 "
-"   my personal .vimrc
+"   my personal .vimrc by dccmx
 "
 " }
-
 
 " Basics {
     set nocompatible " explicitly get out of vi-compatible mode
@@ -41,7 +40,7 @@
     set laststatus=2 " always show the status line
     set lazyredraw " do not redraw while running macros
     set nohlsearch " do not highlight searched for phrases    
-    function ToggleHLSearch()
+    function! ToggleHLSearch()
     	if &hls
     		set nohls
     	else
@@ -64,6 +63,19 @@
     endfunction
     set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
+    if has("gui_running")
+
+        set guifont=Consolas
+        "把gui的右边的滑动条去掉
+        set guioptions-=r
+        "把gui的左边的滑动条去掉
+        set guioptions-=L
+        set guioptions-=m
+        set guioptions-=T
+        autocmd GUIEnter * simalt ~x "启动时最大化窗口
+
+    endif
+
 " }
 
 " Text Formatting/Layout {
@@ -80,13 +92,12 @@
     set tabstop=4 " real tabs should be 8, and they will show with  set list on
 " }
 
-
 " Folding {
     set foldenable " Turn on folding
     set foldmethod=syntax " Fold on the marker
     set foldlevel=100 " Don't autofold anything (but I can still fold manually)
     set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds 
-    function SimpleFoldText() " {
+    function! SimpleFoldText() " {
         return getline(v:foldstart).' '
     endfunction " }
     set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
@@ -119,8 +130,8 @@
         " }
     " }
     
-	" tabbar Settings {
-	    let g:Tb_ForceSyntaxEnable=1
+    " tabbar Settings {
+        let g:Tb_ForceSyntaxEnable=1
         let g:Tb_MaxSize=2
         let g:Tb_TabWrap=1
         autocmd! BufEnter * nested call TestTabbar()
@@ -129,16 +140,16 @@
                 wincmd j " 跳到下面的視窗
             endif
         endfunction
-	"}
+    " }
 
-	"yank ring {
-	    map <leader>y :YRShow<CR>
+    " yank ring {
+        map <leader>y :YRShow<CR>
         let g:yankring_history_dir = '$HOME/.vim/'
         let g:yankring_history_file = '.yankring_history'
     "}
 
-	"NERD Tree {
-	    let NERDChristmasTree=1
+    " NERD Tree {
+        let NERDChristmasTree=1
         let NERDTreeAutoCenter=1
         let NERDTreeBookmarksFile=$HOME.'/.vim/.NerdBookmarks.txt'
         let NERDTreeMouseMode=2
@@ -150,24 +161,23 @@
         let NERDTreeWinSize=40
         let NERDTreeHighlightCursorline=1
         let NERDTreeWinPos="right"
-    "}
+    " }
 
-    "NERD_Comment{
+    " NERD_Comment {
         let NERDCommentWholeLinesInVMode=1
-    "}
+    " }
 
-
-	"ctags and cscope{
-	    set tags=./tags,tags,../tags,../../tags
+    " Ctags and cscope {
+        set tags=./tags,tags,../tags,../../tags
         cs add ./cscope.out ./
         set tags+=/usr/include/c++/tags
         cs add usr/include/c++/cscope.out /usr/include/c++/
         set tags+=/usr/include/linux/tags
         cs add /usr/include/linux/cscope.out /usr/include/linux
         set cscopequickfix=g-,s-,c-,d-,i-,t-,e-
-    "}
+    " }
 
-    "OmniCpp {
+    " OmniCpp {
 	    "let OmniCpp_MayCompleteScope = 1
         "let OmniCpp_DefaultNamespaces = ["std"]
         "let OmniCpp_GlobalScopeSearch = 1 " 0 or 1
@@ -178,10 +188,13 @@
         "let OmniCpp_ShowAccess = 1
         "let OmniCpp_MayCompleteDot = 1
         "let OmniCpp_MayCompleteArrow = 1
-    "}
+    " }
+
+    " Fuzzy finder {
+        map <leader>fz :FufFileWithFullCwd<CR>
+    " }
 
 " }
-
 
 " Mappings {
     " Make p in Visual mode replace the selected text with the "" register.
@@ -262,19 +275,6 @@
         autocmd BufWritePost ~/.vimrc       so ~/.vimrc
         autocmd BufWritePost vimrc          so ~/.vimrc
     augroup END
-    "}
-"}
-
-if has("gui_running")
-
-    set guifont=Consolas
-    "把gui的右边的滑动条去掉
-    set guioptions-=r
-    "把gui的左边的滑动条去掉
-    set guioptions-=L
-    set guioptions-=m
-    set guioptions-=T
-    autocmd GUIEnter * simalt ~x "启动时最大化窗口
-
-endif
+    " }
+" }
 
