@@ -190,10 +190,6 @@
         "let OmniCpp_MayCompleteArrow = 1
     " }
 
-    " Fuzzy finder {
-        map <leader>fz :FufFileWithFullCwd<CR>
-    " }
-
 " }
 
 " Mappings {
@@ -220,8 +216,9 @@
     " }
 
     nmap <leader>a <Esc>:A!<CR>
-    nmap <leader>t <Esc>:Tlist<CR>
-    nmap <leader>f <Esc>:NERDTreeToggle<CR>
+    nmap <leader>tl <Esc>:Tlist<CR>
+    nmap <leader>fl <Esc>:NERDTreeToggle<CR>
+    nmap <leader>fz :FufFileWithFullCwd<CR>
     nnoremap <silent> <F3> :Grep<CR> 
 	nmap <leader>qw :cw<CR>
 	nmap <leader>qn :cn<CR>
