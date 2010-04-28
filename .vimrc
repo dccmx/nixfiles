@@ -221,8 +221,8 @@
     nmap <leader>fz :FufFileWithFullCwd<CR>
     nnoremap <silent> <F3> :Grep<CR> 
 	nmap <leader>el :cw<CR>
-	nmap <leader>ne :cn<CR>
-	nmap <leader>pe :cp<CR>
+	nmap <leader>en :cn<CR>
+	nmap <leader>ep :cp<CR>
 	nmap <leader>ec :cclose<CR>
 	nmap <leader><space> :make<CR>
 
