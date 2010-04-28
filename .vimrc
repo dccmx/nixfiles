@@ -171,7 +171,7 @@
         set tags=./tags,tags,../tags,../../tags
         cs add ./cscope.out ./
         set tags+=/usr/include/c++/tags
-        cs add usr/include/c++/cscope.out /usr/include/c++/
+        cs add /usr/include/c++/cscope.out /usr/include/c++/
         set tags+=/usr/include/linux/tags
         cs add /usr/include/linux/cscope.out /usr/include/linux
         set cscopequickfix=g-,s-,c-,d-,i-,t-,e-
@@ -220,14 +220,14 @@
     nmap <leader>fl <Esc>:NERDTreeToggle<CR>
     nmap <leader>fz :FufFileWithFullCwd<CR>
     nnoremap <silent> <F3> :Grep<CR> 
-	nmap <leader>qw :cw<CR>
-	nmap <leader>qn :cn<CR>
-	nmap <leader>qp :cp<CR>
-	nmap <leader>qc :cclose<CR>
+	nmap <leader>el :cw<CR>
+	nmap <leader>ne :cn<CR>
+	nmap <leader>pe :cp<CR>
+	nmap <leader>ec :cclose<CR>
 	nmap <leader><space> :make<CR>
 
-	"Window Switch{
-	    noremap <C-j> <C-w>j
+    "Window Switch{
+        noremap <C-j> <C-w>j
         noremap <C-k> <C-w>k
         noremap <C-h> <C-w>h
         noremap <C-l> <C-w>l
