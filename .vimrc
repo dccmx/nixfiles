@@ -218,7 +218,8 @@
     nmap <leader>a <Esc>:A!<CR>
     nmap <leader>tl <Esc>:Tlist<CR>
     nmap <leader>fl <Esc>:NERDTreeToggle<CR>
-    nmap <leader>fz :FufFileWithFullCwd<CR>
+    nmap <leader>fzf :FufFileWithFullCwd<CR>
+    nmap <leader>ftf :FufTaggedFile<CR>
     nnoremap <silent> <F3> :Grep<CR> 
 	nmap <leader>el :cw<CR>
 	nmap <leader>en :cn<CR>
