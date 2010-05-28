@@ -19,7 +19,6 @@ alias grep='grep --color=auto'
 alias ncmpc='ncmpc -c'
 alias daemons='ls /var/run/daemons'
 alias ping='ping -c 5'
-alias nano='nano -w'
 alias more='less'
 
 ##
