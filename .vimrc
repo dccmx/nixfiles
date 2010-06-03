@@ -190,6 +190,11 @@
         "let OmniCpp_MayCompleteArrow = 1
     " }
 
+    " PyDiction {
+        let g:pydiction_location = '~/.vim/tools//pydiction/complete-dict'
+        let g:pydiction_menu_height = 20
+    " }
+
 " }
 
 " Mappings {
@@ -220,6 +225,7 @@
     nmap <leader>fl <Esc>:NERDTreeToggle<CR>
     nmap <leader>fzf :FufFileWithFullCwd<CR>
     nmap <leader>ftf :FufTaggedFile<CR>
+    nmap <leader>fzt :FufTag<CR>
     nnoremap <silent> <F3> :Grep<CR> 
 	nmap <leader>el :cw<CR>
 	nmap <leader>en :cn<CR>
