@@ -244,9 +244,9 @@
 
 	map <leader>cd :cd %:p:h<CR> "Switch to current dir
 
-	map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\\tags" "%:p:h"<CR>
-	map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-	map <F11> :!cscope -Rbkq<CR>
+    "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\\tags" "%:p:h"<CR>
+	map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+	map <C-F11> :!cscope -Rbkq<CR>
 
 	nmap <C-t> :colder<CR>:cc<CR>
 
