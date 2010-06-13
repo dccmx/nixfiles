@@ -269,8 +269,9 @@
 
 " }
 
-" Autocommands {
-
+" commands {
+    command Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+    command Cscopegen !cscope -Rbkq 
     autocmd FileType * set formatoptions-=ro
 
     " Reread configuration of Vim if .vimrc is saved {
