@@ -65,7 +65,7 @@
 
     if has("gui_running")
 
-        set guifont=Consolas
+        set guifont=YaHei\ Consolas\ Hybrid
         "把gui的右边的滑动条去掉
         set guioptions-=r
         "把gui的左边的滑动条去掉
@@ -242,7 +242,8 @@
 
 	noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm10gt "Remove the Windows ^M
 
-	map <leader>cd :cd %:p:h<CR> "Switch to current dir
+    "Switch to current dir
+	map <leader>cd :cd %:p:h<CR>
 
     "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\\tags" "%:p:h"<CR>
 	map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -269,9 +270,8 @@
 
 " }
 
-" commands {
-    command Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-    command Cscopegen !cscope -Rbkq 
+" Autocommands {
+
     autocmd FileType * set formatoptions-=ro
 
     " Reread configuration of Vim if .vimrc is saved {
