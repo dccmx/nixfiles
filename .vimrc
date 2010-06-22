@@ -270,7 +270,10 @@
 
 " }
 
-" Autocommands {
+" commands {
+
+    command Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+    command Cscopegen !cscope -Rbkq 
 
     autocmd FileType * set formatoptions-=ro
 
