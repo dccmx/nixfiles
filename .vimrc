@@ -195,6 +195,12 @@
         let g:pydiction_menu_height = 20
     " }
 
+    " Grep {
+        let Grep_Skip_Files = '*.bak *~ tags cscope.*' 
+        let Grep_Skip_Dirs = '.git .svn' 
+        let Grep_Default_Options = '-i' 
+    " }
+
 " }
 
 " Mappings {
@@ -226,7 +232,8 @@
     nmap <leader>fzf :FufFileWithFullCwd<CR>
     nmap <leader>ftf :FufTaggedFile<CR>
     nmap <leader>fzt :FufTag<CR>
-    nnoremap <silent> <F3> :Grep<CR> 
+    nnoremap <silent> <F3> :Grep <CR> 
+    nnoremap <silent> <F4> :Grep <cword> %<CR> 
 	nmap <leader>el :cw<CR>
 	nmap <leader>en :cn<CR>
 	nmap <leader>ep :cp<CR>
@@ -240,7 +247,8 @@
         noremap <C-l> <C-w>l
     "}
 
-	noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm10gt "Remove the Windows ^M
+    "Remove the Windows ^M
+	noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>
 
     "Switch to current dir
 	map <leader>cd :cd %:p:h<CR>
