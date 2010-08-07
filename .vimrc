@@ -12,10 +12,12 @@
     set background=dark " we plan to use a dark background
     syntax on " syntax highlighting on
     color desert    
-    set guifont=Consolas
     set fileencoding=utf-8
     let &termencoding=&encoding
     set fileencodings=utf-8,gbk,ucs-bom,cp936,default
+    set nobackup
+    set nowritebackup
+    set noswapfile
 " }
 
 " General {
@@ -190,11 +192,6 @@
         "let OmniCpp_MayCompleteArrow = 1
     " }
 
-    " PyDiction {
-        let g:pydiction_location = '~/.vim/tools//pydiction/complete-dict'
-        let g:pydiction_menu_height = 20
-    " }
-
     " Grep {
         let Grep_Skip_Files = '*.bak *~ tags cscope.*' 
         let Grep_Skip_Dirs = '.git .svn' 
@@ -278,12 +275,15 @@
 
 " }
 
-" commands {
+" Autocommands {
 
     command Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
     command Cscopegen !cscope -Rbkq 
 
     autocmd FileType * set formatoptions-=ro
+
+    autocmd BufRead *.json set filetype=json
+    au! Syntax json source json.vim
 
     " Reread configuration of Vim if .vimrc is saved {
     augroup VimConfig
