@@ -82,6 +82,7 @@
 
 " Text Formatting/Layout {
     set completeopt=longest,menu
+    set complete-=i
     set expandtab " no real tabs please!
     set ignorecase " case insensitive by default
     set nowrap " do not wrap line
