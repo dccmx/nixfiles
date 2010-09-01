@@ -60,7 +60,7 @@ set shortmess+=I "disable startup message
 set showcmd " show the command being typed
 set showmatch " show matching brackets
 function! CurDir()
-    let curdir=substitute(getcwd(), $HOME, "~/", "g")
+    let curdir=substitute(getcwd(), $HOME, "~", "g")
     return curdir
 endfunction
 
@@ -121,7 +121,7 @@ function! WhatFunction()
     return ret
 endfunction
 
-set statusline=%F:%{WhatFunction()}%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F:%{cfi#get_func_name()}%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 if has("gui_running")
 
@@ -231,12 +231,7 @@ let NERDCommentWholeLinesInVMode=1
 " Ctags and cscope {{{
 set tags=./tags
 set tags+=$HOME/.tags/tags
-set tags+=$HOME/.tags/c++/tags
-set tags+=$HOME/.tags/bits/tags
-set tags+=$HOME/.tags/arpa/tags
-set tags+=$HOME/.tags/netinet/tags
-set tags+=$HOME/.tags/sys/tags
-set tags+=$HOME/.tags/linux/tags
+set tags+=$HOME/.tags/local/tags
 
 "cs add ./cscope.out ./
 "cs add /usr/include/c++/cscope.out /usr/include/c++/
