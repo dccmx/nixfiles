@@ -44,4 +44,3 @@ alias rest='sudo shutdown -r'
 ##
 alias home='cd ~'
 
-alias tmux='tmux attach || tmux new'
