@@ -285,9 +285,6 @@ command! Cscopegen !cscope -Rbkq
 
 autocmd FileType * set formatoptions-=ro
 
-autocmd BufRead *.json set filetype=json
-au! Syntax json source json.vim
-
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
     autocmd!
