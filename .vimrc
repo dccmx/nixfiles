@@ -284,6 +284,7 @@ command! Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Cscopegen !cscope -Rbkq 
 
 autocmd FileType * set formatoptions-=ro
+autocmd FileType c set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
