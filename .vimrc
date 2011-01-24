@@ -286,7 +286,8 @@ command! Cscopegen !cscope -Rbkq
 autocmd FileType * set formatoptions-=ro
 autocmd FileType c set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType cpp set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType ragel set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ragel set tabstop=2 shiftwidth=2 softtabstop=2 nocindent
+autocmd FileType go set tabstop=2 shiftwidth=2 softtabstop=2 nocindent
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
