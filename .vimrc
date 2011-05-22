@@ -91,9 +91,9 @@ set autoindent
 set cindent
 set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
 set smartcase " if there are caps, go case-sensitive
-set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
-set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
-set tabstop=4 " real tabs should be 8, and they will show with  set list on
+set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
+set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
+set tabstop=2 " real tabs should be 8, and they will show with  set list on
 " }}}
 
 " Folding {{{
@@ -284,10 +284,7 @@ command! Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Cscopegen !cscope -Rbkq 
 
 autocmd FileType * set formatoptions-=ro
-autocmd FileType c set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType cpp set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType ragel set tabstop=2 shiftwidth=2 softtabstop=2 nocindent
-autocmd FileType go set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ragel set nocindent
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
