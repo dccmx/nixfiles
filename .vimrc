@@ -59,6 +59,8 @@ set scrolloff=10 " Keep 10 lines (top/bottom) for scope
 set shortmess+=I "disable startup message
 set showcmd " show the command being typed
 set showmatch " show matching brackets
+set bsdir=buffer "set cwd to buffer dir
+set autochdir "auto change dir to cwd
 function! CurDir()
     let curdir=substitute(getcwd(), $HOME, "~", "g")
     return curdir
