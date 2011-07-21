@@ -287,7 +287,7 @@ command! Cscopegen !cscope -Rbkq
 
 autocmd FileType * set formatoptions-=ro
 autocmd FileType ragel set nocindent
-au BufNewFile,BufRead *.y set filetype=lemon
+autocmd FileType lemon set nocindent noai indentkeys=
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
