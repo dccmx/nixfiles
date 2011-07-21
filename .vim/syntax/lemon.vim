@@ -16,6 +16,7 @@ let b:current_syntax = "lemon"
 syn match   lemonAssign           /<::=>/
 syn region  lemonCode             start="{" end="}" fold
 syn match   lemonComment          /^\/\/.\+/
+syn region  lemonComment          start="/\*" end="\*/" 
 syn match   lemonInclude          /#.\+/
 syn match   lemonDirective        /^%\(\w\|_\)\+\>.\+/ contains=lemonDirectiveArg
 syn match   lemonDirectiveArg     /\s.\+$/ contained
