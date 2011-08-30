@@ -288,6 +288,7 @@ command! Cscopegen !cscope -Rbkq
 autocmd FileType * set formatoptions-=ro
 autocmd FileType ragel set nocindent
 autocmd FileType lemon set nocindent noai indentkeys=
+autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
