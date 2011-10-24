@@ -25,6 +25,8 @@ filetype plugin indent on " load filetype plugins/indent settings
 set nobackup " no backup files
 set backspace=indent,eol,start " make backspace a more flexible
 set clipboard+=unnamed " share windows clipboard
+set noeb " no error bells
+set vb
 set hidden " you can change buffers without saving
 "set mouse=a "don't use mouse everywhere
 set noerrorbells " don't make noise
