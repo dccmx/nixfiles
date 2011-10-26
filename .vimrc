@@ -208,6 +208,19 @@ let Grep_Default_Options = '-i'
 " }}}
 
 " Mappings {{{
+if has("mac")
+  nmap <D-1> :b1<CR>
+  nmap <D-2> :b2<CR>
+  nmap <D-3> :b3<CR>
+  nmap <D-4> :b4<CR>
+  nmap <D-5> :b5<CR>
+  nmap <D-6> :b6<CR>
+  nmap <D-7> :b7<CR>
+  nmap <D-8> :b8<CR>
+  nmap <D-9> :b9<CR>
+  nmap <D-0> :b10<CR>
+endif
+
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
