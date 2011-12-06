@@ -58,6 +58,11 @@ extract ()
 			fi
 }
 
+# git diff without vimdiff
+function git_diff() {
+    git diff --no-ext-diff -w "$@" | vim -R -
+}
+
 # backup 
 backup () 
 {
