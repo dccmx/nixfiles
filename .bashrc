@@ -100,6 +100,7 @@ fi
 
 #by dccmx
 export PATH=~/.bin:$PATH
+[ -r $HOME/.profile ] && source $HOME/.profile 
 if [ "$TERM" == "xterm" ]; then
     # No it isn't, it's gnome-terminal
     export TERM=xterm-256color
