@@ -1,0 +1,56 @@
+#!/usr/bin/python
+import sys
+import getopt
+
+
+def usage():
+    print 'Usage:'
+    print sys.argv[0], '[options] log\n'
+    print 'options'
+    print '-s --sort=time|occur|name   sort result by time (default) or occurence'
+    print '-i --ignore-time=N          ignore function call that costs N or more second time\n'
+    sys.exit(0)
+
+
+def main():
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], 's:i:h', ['sort=', 'ignore-time=', 'help'])
+    except getopt.GetoptError, err:
+        print str(err)
+        usage()
+    sortby = lambda d:d[1][1]
+    ignore_time = -1
+    for o, v in opts:
+        if o in ('-s', '--sort'):
+            if v == 'occur':
+                sortby = lambda d:d[1][0]
+            elif v == 'name':
+                sort = lambda d:d[0]
+            elif not v == 'time':
+                print 'invalid sort param'
+                usage()
+        elif o in ('-i', '--ignore-time'):
+            ignore_time = int(v)
+        elif o in ('-h', '--help'):
+            usage()
+    stat = {}
+    for line in open(args[0]):
+        l = line.split()
+        f = l[0]
+        t = l[-1]
+        if not '(' in f or t == '...>': continue
+        f = f[:f.find('(')]
+        t = t[1:-2]
+        t = float(t)
+        if ignore_time >= 0 and t >= ignore_time: continue
+        if stat.has_key(f):
+            stat[f][0] += 1
+            stat[f][1] += t
+        else:
+            stat[f] = [1, t]
+    for f, s in sorted(stat.items(), key = sortby, reverse=True):
+        print f, s
+
+
+if __name__ == '__main__':
+    main()
