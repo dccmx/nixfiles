@@ -68,7 +68,7 @@ function! CurDir()
     return curdir
 endfunction
 
-set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{SyntasticStatuslineFlag()}
 
 if has("gui_running")
 
@@ -205,6 +205,10 @@ let Grep_Skip_Dirs = '.git .svn'
 let Grep_Default_Options = '-i' 
 " }}}
 
+" Syntastic {{{
+let g:syntastic_check_on_open=1
+" }}}
+
 " }}}
 
 " Mappings {{{
@@ -255,6 +259,7 @@ nmap <leader>el :cw<CR>
 nmap <leader>en :cn<CR>
 nmap <leader>ep :cp<CR>
 nmap <leader>ec :cclose<CR>
+nmap <leader>es :Errors<CR>
 nmap <leader><space> :make<CR>
 
 "Window Switch{{{
