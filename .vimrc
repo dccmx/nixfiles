@@ -207,6 +207,7 @@ let Grep_Default_Options = '-i'
 
 " Syntastic {{{
 let g:syntastic_check_on_open=1
+let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include'
 " }}}
 
 " }}}
