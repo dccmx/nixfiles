@@ -210,6 +210,10 @@ let g:syntastic_check_on_open=1
 let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include'
 " }}}
 
+" ack {{{
+let g:ackprg="ack -H --nocolor --nogroup --column"
+" }}}
+
 " }}}
 
 " Mappings {{{
