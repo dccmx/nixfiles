@@ -217,6 +217,8 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 " }}}
 
 " Mappings {{{
+set pastetoggle=<F2>
+
 if has("mac")
   nmap <D-1> :b1<CR>
   nmap <D-2> :b2<CR>
