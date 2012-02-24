@@ -217,7 +217,12 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 " }}}
 
 " Mappings {{{
+" save me from SHIFT
+nnoremap ; :
+
 set pastetoggle=<F2>
+
+cmap w!! w !sudo tee % >/dev/null
 
 if has("mac")
   nmap <D-1> :b1<CR>
