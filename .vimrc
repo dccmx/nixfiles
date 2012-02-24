@@ -112,6 +112,7 @@ set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
 " }}}
 
 " Plugin Settings {{{
+call pathogen#infect()
 
 " TagList Settings {{{
 let Tlist_Auto_Open=0 " let the tag list open automagically
@@ -150,12 +151,6 @@ func! TestTabbar()
 endfunction
 " }}}
 
-" yank ring {{{
-map <leader>y :YRShow<CR>
-let g:yankring_history_dir = '$HOME/.vim/'
-let g:yankring_history_file = '.yankring_history'
-"}}}
-
 " NERD Tree {{{
 let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
@@ -169,40 +164,6 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=40
 let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos="right"
-" }}}
-
-" NERD_Comment {{{
-let NERDCommentWholeLinesInVMode=1
-" }}}
-
-" Ctags and cscope {{{
-set tags=./tags
-set tags+=$HOME/.tags/tags
-set tags+=$HOME/.tags/local/tags
-
-"cs add ./cscope.out ./
-"cs add /usr/include/c++/cscope.out /usr/include/c++/
-"cs add /usr/include/linux/cscope.out /usr/include/linux
-"set cscopequickfix=g-,s-,c-,d-,i-,t-,e-
-" }}}
-
-" OmniCpp {{{
-"let OmniCpp_MayCompleteScope = 1
-"let OmniCpp_DefaultNamespaces = ["std"]
-"let OmniCpp_GlobalScopeSearch = 1 " 0 or 1
-"let OmniCpp_NamespaceSearch = 1 " 0 , 1 or 2
-"let OmniCpp_DisplayMode = 1
-"let OmniCpp_ShowScopeInAbbr = 0
-"let OmniCpp_ShowPrototypeInAbbr = 1
-"let OmniCpp_ShowAccess = 1
-"let OmniCpp_MayCompleteDot = 1
-"let OmniCpp_MayCompleteArrow = 1
-" }}}
-
-" Grep {{{
-let Grep_Skip_Files = '*.bak *~ tags cscope.*' 
-let Grep_Skip_Dirs = '.git .svn' 
-let Grep_Default_Options = '-i' 
 " }}}
 
 " Syntastic {{{
@@ -262,11 +223,11 @@ nmap <leader>qa :qall<CR>
 nmap <leader>a <Esc>:A!<CR>
 nmap <leader>tl <Esc>:Tlist<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
-nmap <leader>fzf :FufFileWithFullCwd<CR>
+nmap <leader>ff :FufFileWithFullCwd<CR>
 nmap <leader>ftf :FufTaggedFile<CR>
-nmap <leader>fzt :FufTag<CR>
-nnoremap <silent> <F3> :Grep <CR> 
-nnoremap <silent> <F4> :Grep <cword> %<CR> 
+nmap <leader>ft :FufTag<CR>
+nnoremap <silent> <F3> :Ack <CR> 
+nnoremap <silent> <F4> :Ack <cword> %<CR> 
 nmap <leader>el :cw<CR>
 nmap <leader>en :cn<CR>
 nmap <leader>ep :cp<CR>
@@ -287,35 +248,9 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>
 "Switch to current dir
 map <leader>cd :cd %:p:h<CR>
 
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\\tags" "%:p:h"<CR>
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <C-F11> :!cscope -Rbkq<CR>
-
-nmap <C-t> :colder<CR>:cc<CR>
-
-"0 or s: Find this C symbol
-"1 or g: Find this definition
-"2 or d: Find functions called by this function
-"3 or c: Find functions calling this function
-"4 or t: Find this text string
-"6 or e: Find this egrep pattern
-"7 or f: Find this file
-"8 or i: Find files #including this file
-nmap <C-_>s :cs find s <C-r>=expand("<cword>")<CR><CR> 
-nmap <C-_>d :cs find g <C-r>=expand("<cword>")<CR><CR> 
-nmap <C-_>c :cs find d <C-r>=expand("<cword>")<CR><CR>
-nmap <C-_>t :cs find c <C-r>=expand("<cword>")<CR><CR> 
-nmap <C-_>e :cs find t <C-r>=expand("<cword>")<CR><CR> 
-nmap <C-_>g :cs find e <C-r>=expand("<cword>")<CR><CR> 
-nmap <C-_>f :cs find f <C-r>=expand("<cfile>")<CR><CR> 
-nmap <C-_>i :cs find i ^<C-r>=expand("<cfile>")<CR>$<CR> 
-
 " }}}
 
 " Autocommands {{{
-
-command! Ctagsgen !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-command! Cscopegen !cscope -Rbkq 
 
 autocmd FileType * set formatoptions-=ro
 autocmd FileType ragel set nocindent
