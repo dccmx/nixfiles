@@ -7,6 +7,16 @@
 
 " Basics {{{
 set nocompatible " explicitly get out of vi-compatible mode
+" Use pathogen to easily modify the runtime path to include all plugins under
+" the ~/.vim/bundle directory
+filetype off " force reloading *after* pathogen loaded
+call pathogen#infect()
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on " enable detection, plugins and indenting in one step
+
+" Change the mapleader from \ to ,
+let mapleader=","
 set noexrc " don't use local version of .(g)vimrc, .exrc
 let mapleader=","
 set background=dark " we plan to use a dark background
@@ -23,7 +33,8 @@ set undolevels=1000      " use many muchos levels of undo
 " }}}
 
 " General {{{
-filetype plugin indent on " load filetype plugins/indent settings
+set undofile " keep a persistent backup file
+set undodir=~/.undo
 set nobackup " no backup files
 set backspace=indent,eol,start " make backspace a more flexible
 set clipboard+=unnamed " share windows clipboard
@@ -34,7 +45,7 @@ set hidden " you can change buffers without saving
 set wildmenu " turn on command line completion wild style
 " ignore these list file extensions
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
-set wildmode=list:longest " turn on wild mode huge list
+set wildmode=full
 set autowrite
 " set ttyfast
 " }}}
@@ -91,7 +102,7 @@ endif
 " }}}
 
 " Text Formatting/Layout {{{
-set completeopt=longest,menu
+set completeopt=longest,menu,preview
 set complete-=i
 set expandtab " no real tabs please!
 set ignorecase " case insensitive by default
@@ -117,7 +128,6 @@ set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
 " }}}
 
 " Plugin Settings {{{
-call pathogen#infect()
 
 " TagList Settings {{{
 let Tlist_Auto_Open=0 " let the tag list open automagically
