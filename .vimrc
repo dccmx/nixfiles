@@ -34,11 +34,15 @@ set hidden " you can change buffers without saving
 set wildmenu " turn on command line completion wild style
 " ignore these list file extensions
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
-"set wildmode=list:longest " turn on wild mode huge list
+set wildmode=list:longest " turn on wild mode huge list
 set autowrite
+" set ttyfast
 " }}}
 
 " Vim UI {{{
+" use perl/python style regex
+nnoremap / /\v
+vnoremap / /\v
 set cursorline " highlight current line
 set incsearch " BUT do highlight as you type you search phrase
 set nowrapscan 
@@ -225,7 +229,8 @@ nmap <F3> :Ack <CR>
 nmap <F4> :Ack <cword> %<CR> 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
-nmap <leader>a <Esc>:A!<CR>
+nnoremap <leader>a :Ack 
+nmap <leader>h <Esc>:A!<CR>
 nmap <leader>tl <Esc>:Tlist<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>ff :FufFileWithFullCwd<CR>
@@ -268,6 +273,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+" save when losing focus
+autocmd FocusLost * :wa
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
