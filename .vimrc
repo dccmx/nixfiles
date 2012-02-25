@@ -11,13 +11,15 @@ set noexrc " don't use local version of .(g)vimrc, .exrc
 let mapleader=","
 set background=dark " we plan to use a dark background
 syntax on " syntax highlighting on
-color desert    
+color desert
 set fileencoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,gbk,ucs-bom,cp936,default
 set nobackup
 set nowritebackup
 set noswapfile
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
 " }}}
 
 " General {{{
@@ -25,11 +27,10 @@ filetype plugin indent on " load filetype plugins/indent settings
 set nobackup " no backup files
 set backspace=indent,eol,start " make backspace a more flexible
 set clipboard+=unnamed " share windows clipboard
-set noeb " no error bells
-set vb
+set visualbell           " don't beep
+set noerrorbells         " don't beep
 set hidden " you can change buffers without saving
 "set mouse=a "don't use mouse everywhere
-set noerrorbells " don't make noise
 set wildmenu " turn on command line completion wild style
 " ignore these list file extensions
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
@@ -203,7 +204,7 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Make Arrow Keys Useful Again {{{
 map <down> <ESC>:bd<CR>
-map <up> <ESC>:e noname<CR>
+map <up> <ESC>:Scratch<CR>
 map <right> <ESC>:bn!<CR>
 map <left> <ESC>:bp!<CR>
 map <space> <ESC>:b#<CR>
@@ -220,14 +221,16 @@ nmap <leader>x <Esc>:q<CR>
 nmap <leader>qa :qall<CR>
 " }}}
 
+nmap <F3> :Ack <CR> 
+nmap <F4> :Ack <cword> %<CR> 
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr> 
 nmap <leader>a <Esc>:A!<CR>
 nmap <leader>tl <Esc>:Tlist<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>ff :FufFileWithFullCwd<CR>
 nmap <leader>ftf :FufTaggedFile<CR>
 nmap <leader>ft :FufTag<CR>
-nnoremap <silent> <F3> :Ack <CR> 
-nnoremap <silent> <F4> :Ack <cword> %<CR> 
 nmap <leader>el :cw<CR>
 nmap <leader>en :cn<CR>
 nmap <leader>ep :cp<CR>
