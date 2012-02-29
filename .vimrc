@@ -274,6 +274,7 @@ autocmd FileType * set formatoptions-=ro
 autocmd FileType ragel set nocindent
 autocmd FileType lemon set nocindent noai indentkeys=
 autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType go set makeprg=go\ build
 
 " omnifunc settings
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -295,4 +296,3 @@ augroup VimConfig
 augroup END
 " }}}
 " }}}
-
