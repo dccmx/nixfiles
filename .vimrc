@@ -183,7 +183,8 @@ let NERDTreeWinPos="right"
 
 " Syntastic {{{
 let g:syntastic_check_on_open=1
-let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include'
+let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps'
+let g:syntastic_c_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps'
 " }}}
 
 " ack {{{
