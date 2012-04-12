@@ -183,8 +183,8 @@ let NERDTreeWinPos="right"
 
 " Syntastic {{{
 let g:syntastic_check_on_open=1
-let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps'
-let g:syntastic_c_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps'
+let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I..'
+let g:syntastic_c_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I..'
 " }}}
 
 " ack {{{
@@ -241,7 +241,7 @@ nmap <F4> :Ack <cword> %<CR>
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
 nnoremap <leader>a :Ack 
-nmap <leader>h <Esc>:A!<CR>
+nmap <leader>H <Esc>:A!<CR>
 nmap <leader>tl <Esc>:Tlist<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>ff :FufFileWithFullCwd<CR>

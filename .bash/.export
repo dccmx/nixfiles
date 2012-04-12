@@ -1,3 +1,2 @@
-export PS1="\u@\w$ "
 export EDITOR="vim"
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man nonu nolist' -\""
