@@ -87,7 +87,6 @@ endfunction
 set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{SyntasticStatuslineFlag()}
 
 if has("gui_running")
-
     set guifont=YaHei\ Consolas\ Hybrid
     "把gui的右边的滑动条去掉
     set guioptions-=r
@@ -95,8 +94,6 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=m
     set guioptions-=T
-    autocmd GUIEnter * simalt ~x "启动时最大化窗口
-
 endif
 
 " }}}
@@ -288,6 +285,10 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 " save when losing focus
 autocmd FocusLost * :wa
+
+if has('win32') || has('win64')
+  autocmd GUIEnter * simalt ~x "启动时最大化窗口
+endif
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
