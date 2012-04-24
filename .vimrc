@@ -87,7 +87,7 @@ endfunction
 set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{SyntasticStatuslineFlag()}
 
 if has("gui_running")
-    set guifont=YaHei\ Consolas\ Hybrid
+    set guifont=YaHei\ Consolas\ Hybrid\ 13
     "把gui的右边的滑动条去掉
     set guioptions-=r
     "把gui的左边的滑动条去掉
