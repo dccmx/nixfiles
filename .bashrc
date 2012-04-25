@@ -110,7 +110,3 @@ set -o vi
 . ~/.bash/.aliases
 . ~/.bash/.export
 . ~/.bash/.functions
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
