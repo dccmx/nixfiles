@@ -1,2 +1,4 @@
 export EDITOR="vim"
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man nonu nolist' -\""
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/go/bin:~/.bin:$PATH
+export GOPATH=/usr/local/go:$GOPATH
