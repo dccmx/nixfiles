@@ -132,6 +132,13 @@ function acp#meetsForPerlOmni(context)
 endfunction
 
 "
+function acp#meetsForGoOmni(context)
+  return g:acp_behaviorGoOmniLength >= 0 &&
+        \ a:context =~ '[^. \t]\(\.\| \)\k\{' . 
+				\							 g:acp_behaviorGoOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForXmlOmni(context)
   return g:acp_behaviorXmlOmniLength >= 0 &&
         \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .

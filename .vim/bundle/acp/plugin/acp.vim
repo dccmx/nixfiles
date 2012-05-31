@@ -25,6 +25,7 @@ function s:makeDefaultBehavior()
         \   'ruby'   : [],
         \   'python' : [],
         \   'perl'   : [],
+        \   'go'     : [],
         \   'xml'    : [],
         \   'html'   : [],
         \   'xhtml'  : [],
@@ -78,6 +79,12 @@ function s:makeDefaultBehavior()
   call add(behavs.python, {
         \   'command' : "\<C-x>\<C-o>",
         \   'meets'   : 'acp#meetsForPythonOmni',
+        \   'repeat'  : 0,
+        \ })
+  "---------------------------------------------------------------------------
+    call add(behavs.go, {
+        \   'command' : "\<C-x>\<C-o>",
+        \   'meets'   : 'acp#meetsForGoOmni',
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
@@ -135,6 +142,7 @@ call l9#defineVariableDefault('g:acp_behaviorRubyOmniMethodLength', 0)
 call l9#defineVariableDefault('g:acp_behaviorRubyOmniSymbolLength', 1)
 call l9#defineVariableDefault('g:acp_behaviorPythonOmniLength', 0)
 call l9#defineVariableDefault('g:acp_behaviorPerlOmniLength', -1)
+call l9#defineVariableDefault('g:acp_behaviorGoOmniLength', 0)
 call l9#defineVariableDefault('g:acp_behaviorXmlOmniLength', 0)
 call l9#defineVariableDefault('g:acp_behaviorHtmlOmniLength', 0)
 call l9#defineVariableDefault('g:acp_behaviorCssOmniPropertyLength', 1)
