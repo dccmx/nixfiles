@@ -78,8 +78,8 @@ fi
 #by dccmx
 set -o vi
 
-. ~/.bash/.aliases
-. ~/.bash/.export
-. ~/.bash/.functions
+. ~/.bash/aliase
+. ~/.bash/export
+. ~/.bash/function
 
 [ -r $HOME/.profile ] && source $HOME/.profile 
