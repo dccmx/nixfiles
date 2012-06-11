@@ -239,6 +239,7 @@ nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
 nnoremap <leader>a :Ack 
 nmap <leader>H <Esc>:A!<CR>
+nmap <leader>f <Esc>:GoFmt<CR>
 nmap <leader>tl <Esc>:Tlist<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>ff :FufFileWithFullCwd<CR>
@@ -268,6 +269,12 @@ map <leader>cd :cd %:p:h<CR>
 
 " Autocommands {{{
 
+function Goformat()
+    let regel=line(".")
+    silent %!gofmt -tabwidth=2 -tabs=false
+    call cursor(regel, 1)
+endfunction
+
 autocmd FileType * set formatoptions-=ro
 autocmd FileType ragel set nocindent
 autocmd FileType lemon set nocindent noai indentkeys=
@@ -281,7 +288,8 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c setlocal omnifunc=ccomplete#Complete
+"autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
+autocmd Filetype go command! GoFmt call Goformat()
 
 " save when losing focus
 autocmd FocusLost * :wa
