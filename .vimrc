@@ -290,6 +290,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 "autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
 autocmd Filetype go command! GoFmt call Goformat()
+autocmd BufWritePre *.go GoFmt
 
 " save when losing focus
 autocmd FocusLost * :wa
