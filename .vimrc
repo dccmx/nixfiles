@@ -84,7 +84,7 @@ function! CurDir()
     return curdir
 endfunction
 
-set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{SyntasticStatuslineFlag()}
+set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]%{fugitive#statusline()}\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{SyntasticStatuslineFlag()}
 
 if has("gui_running")
     set guifont=Yahei\ Consolas\ Hybrid:h13
