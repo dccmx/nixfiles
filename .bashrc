@@ -81,5 +81,3 @@ set -o vi
 . ~/.bash/aliase
 . ~/.bash/export
 . ~/.bash/function
-
-[ -r $HOME/.profile ] && source $HOME/.profile 
