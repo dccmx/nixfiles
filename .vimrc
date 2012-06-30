@@ -131,6 +131,10 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 " }}}
 
+" VimShell Settings {{{
+let g:vimshell_prompt = substitute('CWD$ ', 'CWD', CurDir(), 'g')
+" }}}
+
 " MiniBufExplorer Settings {{{
 autocmd! BufEnter * nested call TestMiniBufExplorer()
 func! TestMiniBufExplorer()
