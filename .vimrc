@@ -126,39 +126,16 @@ set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
 
 " Plugin Settings {{{
 
-" TagList Settings {{{
-let Tlist_Auto_Open=0 " let the tag list open automagically
-let Tlist_Compact_Format = 1 " show small menu
-let Tlist_Ctags_Cmd = 'ctags' " location of ctags
-let Tlist_Enable_Fold_Column = 0 " do show folding tree
-let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
-let Tlist_File_Fold_Auto_Close = 0 " fold closed other trees
-let Tlist_Sort_Type = "name" " order by 
-let Tlist_Use_Right_Window = 1 " split to the right side of the screen
-let Tlist_WinWidth = 40 " 40 cols wide, so i can (almost always) read my functions
-let Tlist_Close_On_Select=1
-let Tlist_Show_One_File=1
-let Tlist_GainFocus_On_ToggleOpen=1
-" Language Specifics {{{
-" just functions and classes please
-let tlist_aspjscript_settings = 'asp;f:function;c:class' 
-" just functions and subs please
-let tlist_aspvbs_settings = 'asp;f:function;s:sub' 
-" don't show variables in freaking php
-let tlist_php_settings = 'php;c:class;d:constant;f:function' 
-" just functions and classes please
-let tlist_vb_settings = 'asp;f:function;c:class' 
-" }}}
+" TagBar Settings {{{
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
 " }}}
 
-" tabbar Settings {{{
-let g:Tb_ForceSyntaxEnable=1
-let g:Tb_MaxSize=2
-let g:Tb_TabWrap=1
-autocmd! BufEnter * nested call TestTabbar()
-func! TestTabbar()
-    if bufname("%") == "-TabBar-"
-        wincmd j " 跳到下面的視窗
+" MiniBufExplorer Settings {{{
+autocmd! BufEnter * nested call TestMiniBufExplorer()
+func! TestMiniBufExplorer()
+    if bufname("%") == "-MiniBufExplorer-"
+        wincmd j " 跳到下面的窗口
     endif
 endfunction
 " }}}
@@ -240,7 +217,7 @@ nmap <F10> :SCCompileRun<cr>
 nnoremap <leader>a :Ack 
 nmap <leader>H <Esc>:A!<CR>
 nmap <leader>f <Esc>:GoFmt<CR>
-nmap <leader>tl <Esc>:Tlist<CR>
+nmap <leader>tl <Esc>:TagbarToggle<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>ff :FufFileWithFullCwd<CR>
 nmap <leader>ftf :FufTaggedFile<CR>
