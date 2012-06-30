@@ -84,10 +84,8 @@ function! CurDir()
     return curdir
 endfunction
 
-set statusline=%F%m%r%h%w\ [CWD=%{CurDir()}]%{fugitive#statusline()}\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{SyntasticStatuslineFlag()}
-
 if has("gui_running")
-    set guifont=Yahei\ Consolas\ Hybrid:h13
+    set guifont=Menlo\ for\ Powerline:h13
     "把gui的右边的滑动条去掉
     set guioptions-=r
     "把gui的左边的滑动条去掉
@@ -125,6 +123,10 @@ set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
 " }}}
 
 " Plugin Settings {{{
+
+" Powerline Settings {{{
+let g:Powerline_symbols = 'fancy'
+" }}}
 
 " TagBar Settings {{{
 let g:tagbar_autofocus = 1
