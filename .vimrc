@@ -34,7 +34,7 @@ Bundle 'matchit.zip'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'The-NERD-tree'
 Bundle 'garyharan/vim-proto'
-Bundle 'jayferd/ragel.vim'
+Bundle 'msteinert/vim-ragel'
 Bundle 'scratch.vim'
 Bundle 'Syntastic'
 Bundle 'Tagbar'
@@ -285,7 +285,7 @@ map <leader>cd :cd %:p:h<CR>
 
 " Autocommands {{{
 
-function Goformat()
+function! Goformat()
     let view = winsaveview()
     let regel=line(".")
     silent %!gofmt -tabwidth=2 -tabs=false
