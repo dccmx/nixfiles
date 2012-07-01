@@ -2,3 +2,6 @@
     external = git_diff_wrapper
 [pager]
     diff =
+[user]
+	email = dccmx@dccmx.com
+	name = dccmx
