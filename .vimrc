@@ -159,6 +159,7 @@ set tabstop=2 " real tabs should be 8, and they will show with  set list on
 
 " Powerline Settings {{{
 let g:Powerline_symbols = 'fancy'
+call Pl#Theme#InsertSegment('filesize', 'after', 'filetype')
 " }}}
 
 " TagBar Settings {{{
