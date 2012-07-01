@@ -1,0 +1,49 @@
+#!/bin/bash
+# make links first
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
+if ! command_exists git; then
+  echo "please install git first :-("
+  exit
+fi
+
+for dotfile in `ls -a | grep "^\.[a-z]" | cut -d\/ -f1 | grep -v "^\.git$" | grep -v "^\.gitignore$"`;
+do
+  ln -s -i $PWD/$dotfile ~
+done
+
+if command_exists go; then
+  echo "install gocode"
+  go get -u github.com/nsf/gocode
+fi
+
+# get vim bundles
+if [ ! -f ~/.vim/bundle/vundle]; then
+  echo "install vundle"
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
+echo "install vim bundles"
+vim +BundleInstall +qall
+
+echo "compile vimproc"
+# compile vim plugins
+cd ~/.vim/bundle/vimproc
+if [[ $OSTYPE == linux-gnu ]]; then
+  make -f make_unix.mak
+elif [[ $OSTYPE == darwin* ]]; then
+  make -f make_mac.mak
+elif [[ $OSTYPE == cygwin ]]; then
+  make -f make_cygwin.mak
+elif [[ $OSTYPE == win32 ]]; then
+  make -f make_msvc32.mak
+elif [[ $OSTYPE == freebsd ]]; then
+  make -f make_unix.mak
+else
+  echo "vimproc unsupport this platform: $OSTYPE"
+fi
+
+echo "source bashrc"
+source ~/.bashrc

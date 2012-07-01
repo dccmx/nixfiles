@@ -1,7 +1,13 @@
-Tagbar is a vim plugin for browsing the tags of source code files. It provides
-a sidebar that displays the ctags-generated tags of the current file, ordered
-by their scope. This means that for example methods in C++ are displayed under
-the class they are defined in.
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3465
 
-Check out the homepage at http://majutsushi.github.com/tagbar/ for more
-information.
+Tagbar displays the tags of the current file in a sidebar, similar to vimscript #273. But it has the advantage that it will display them ordered by their scope -- for example, methods and members in languages like C++, Python or Java will be listed under their correct class instead of just under the general categories 'functions' or 'variables'. This gives a more helpful overview of the file.
+
+Additionally the Tagbar window can be used to quickly jump to tags.
+
+Tagbar requires Exuberant ctags (http://ctags.sourceforge.net/) in at least version 5.5 to work.
+
+Plugin homepage with screenshots:
+http://majutsushi.github.com/tagbar/
+
+Code repository:
+https://github.com/majutsushi/tagbar

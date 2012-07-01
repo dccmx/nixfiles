@@ -5,22 +5,53 @@
 "
 " }}}
 
-" Basics {{{
-set nocompatible " explicitly get out of vi-compatible mode
-" Use pathogen to easily modify the runtime path to include all plugins under
-" the ~/.vim/bundle directory
-filetype off " force reloading *after* pathogen loaded
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on " enable detection, plugins and indenting in one step
+" Vundle {{{
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" Change the mapleader from \ to ,
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" my bundles
+Bundle 'a.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'AutoComplPop'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'DirDiff.vim'
+Bundle 'dccmx/DrawIt'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'dccmx/google-style.vim'
+Bundle 'JSON.vim'
+Bundle 'dccmx/vim-lemon-syntax'
+Bundle 'matchit.zip'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'The-NERD-tree'
+Bundle 'garyharan/vim-proto'
+Bundle 'jayferd/ragel.vim'
+Bundle 'scratch.vim'
+Bundle 'Syntastic'
+Bundle 'Tagbar'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Shougo/vimproc'
+Bundle 'dccmx/vimshell'
+
+filetype plugin indent on     " required!
+" }}}
+
+" Basics {{{
 let mapleader=","
 set noexrc " don't use local version of .(g)vimrc, .exrc
 let mapleader=","
-set background=dark " we plan to use a dark background
-syntax on " syntax highlighting on
+set background=dark
+syntax on
 color desert
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -30,6 +61,18 @@ set nowritebackup
 set noswapfile
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
+" }}}
+
+" Folding {{{
+set foldenable " Turn on folding
+set foldmethod=indent
+set foldnestmax=10      "deepest fold is 10 levels
+set foldlevel=100 " Don't autofold anything (but I can still fold manually)
+set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds 
+function! SimpleFoldText() " {{{
+    return getline(v:foldstart).' '
+endfunction " }}}
+set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
 " }}}
 
 " General {{{
@@ -47,6 +90,7 @@ set wildmenu " turn on command line completion wild style
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
 set wildmode=full
 set autowrite
+set autoread
 " set ttyfast
 " }}}
 
@@ -109,17 +153,6 @@ set smartcase " if there are caps, go case-sensitive
 set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
 set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
 set tabstop=2 " real tabs should be 8, and they will show with  set list on
-" }}}
-
-" Folding {{{
-set foldenable " Turn on folding
-set foldmethod=syntax " Fold on the marker
-set foldlevel=100 " Don't autofold anything (but I can still fold manually)
-set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds 
-function! SimpleFoldText() " {{{
-    return getline(v:foldstart).' '
-endfunction " }}}
-set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
 " }}}
 
 " Plugin Settings {{{
