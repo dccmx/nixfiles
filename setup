@@ -15,12 +15,14 @@ do
 done
 
 if command_exists go; then
-  echo "install gocode"
-  go get -u github.com/nsf/gocode
+  if ! command_exists gocode; then
+    echo "install gocode"
+    go get -u github.com/nsf/gocode
+  fi
 fi
 
 # get vim bundles
-if [ ! -f ~/.vim/bundle/vundle]; then
+if [ ! -f ~/.vim/bundle/vundle ]; then
   echo "install vundle"
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
