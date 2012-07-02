@@ -129,7 +129,7 @@ function! CurDir()
 endfunction
 
 if has("gui_running")
-    set guifont=Menlo\ for\ Powerline:h13
+    set guifont=Monaco\ for\ Powerline:h13
     "把gui的右边的滑动条去掉
     set guioptions-=r
     "把gui的左边的滑动条去掉
@@ -199,6 +199,7 @@ let NERDTreeWinPos="right"
 let g:syntastic_check_on_open=1
 let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_c_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
+let g:syntastic_python_checker_args = '--ignore=E501'
 " }}}
 
 " ack {{{
