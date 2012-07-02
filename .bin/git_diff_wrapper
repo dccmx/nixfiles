@@ -1,3 +1,8 @@
 #!/bin/sh
 
-vimdiff "$2" "$5"
+if [[ $OSTYPE == linux-gnu ]]; then
+  vim -d "$2" "$5"
+elif [[ $OSTYPE == darwin* ]]; then
+  mvim -v -d "$2" "$5"
+fi
+
