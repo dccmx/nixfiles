@@ -199,8 +199,8 @@ let NERDTreeWinPos="right"
 
 " Syntastic {{{
 let g:syntastic_check_on_open=1
-let g:syntastic_cpp_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
-let g:syntastic_c_compiler_options=' -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
+let g:syntastic_cpp_compiler_options=' -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
+let g:syntastic_c_compiler_options=' -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_python_checker_args = '--ignore=E501'
 " }}}
 
@@ -266,6 +266,7 @@ nmap <leader>ff :FufFileWithFullCwd<CR>
 nmap <leader>ftf :FufTaggedFile<CR>
 nmap <leader>ft :FufTag<CR>
 nmap <leader>el :cw<CR>
+nmap <leader>se :Errors<CR><C-j>
 nmap <leader>en :cn<CR>
 nmap <leader>ep :cp<CR>
 nmap <leader>ec :cclose<CR>
