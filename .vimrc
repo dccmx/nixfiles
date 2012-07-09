@@ -31,13 +31,13 @@ Bundle 'dccmx/google-style.vim'
 Bundle 'JSON.vim'
 Bundle 'dccmx/vim-lemon-syntax'
 Bundle 'matchit.zip'
-Bundle 'fholgado/minibufexpl.vim'
+Bundle 'dccmx/minibufexpl.vim'
 Bundle 'The-NERD-tree'
 Bundle 'garyharan/vim-proto'
 Bundle 'msteinert/vim-ragel'
 Bundle 'scratch.vim'
 Bundle 'Syntastic'
-Bundle 'Tagbar'
+Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/vimproc'
@@ -173,6 +173,7 @@ let g:vimshell_prompt = substitute('CWD$ ', 'CWD', CurDir(), 'g')
 " }}}
 
 " MiniBufExplorer Settings {{{
+let g:miniBufExplorerHideWhenDiff = 1
 autocmd! BufEnter * nested call TestMiniBufExplorer()
 func! TestMiniBufExplorer()
     if bufname("%") == "-MiniBufExplorer-"
