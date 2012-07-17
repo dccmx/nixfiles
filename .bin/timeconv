@@ -17,20 +17,28 @@ def totimestamp(s):
             return time.mktime(time.strptime(s, fmt))
         except:
             pass
-    return -1
+    raise Exception('bad format')
 
 
 def main():
-    if not len(sys.argv) == 3:
-        print 'Usage: %s [-todate|-totime] value' % sys.argv[0]
+    if not len(sys.argv) == 2:
+        print 'Usage: %s value' % sys.argv[0]
         return
-    elif sys.argv[1] == '-todate':
-        print fromtimestamp(float(sys.argv[2]))
-    elif sys.argv[1] == '-totime':
-        t = totimestamp(sys.argv[2])
-        print t if t >= 0 else 'invalid format "%s"' % sys.argv[2]
+    ts = None
+    dt = None
+    try:
+        ts = float(sys.argv[1])
+        dt = fromtimestamp(ts)
+    except:
+        try:
+            ts = totimestamp(sys.argv[1])
+            dt = fromtimestamp(ts)
+        except:
+            pass
+    if dt and ts:
+        print dt, ts
     else:
-        print 'invalid argument "%s"' % sys.argv[1]
+        print 'bad time format or value'
 
 
 if __name__ == '__main__':
