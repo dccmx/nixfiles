@@ -175,6 +175,7 @@ let g:vimshell_prompt = substitute('CWD$ ', 'CWD', CurDir(), 'g')
 
 " MiniBufExplorer Settings {{{
 let g:miniBufExplorerHideWhenDiff = 1
+let g:miniBufExplShowBufNumbers = 0
 autocmd! BufEnter * nested call TestMiniBufExplorer()
 func! TestMiniBufExplorer()
     if bufname("%") == "-MiniBufExplorer-"
@@ -201,7 +202,7 @@ let NERDTreeWinPos="right"
 " Syntastic {{{
 let g:syntastic_check_on_open=1
 let g:syntastic_cpp_compiler_options=' -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
-let g:syntastic_c_compiler_options=' -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
+let g:syntastic_c_compiler_options=' -std=c99 -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_python_checker_args = '--ignore=E501'
 " }}}
 
