@@ -47,5 +47,9 @@ else
   echo "vimproc unsupport this platform: $OSTYPE"
 fi
 
-echo "source bashrc"
-source ~/.bashrc
+if [ ! -f ~/.profile ]; then
+  echo "source ~/.bashrc" >>~/.profile
+fi
+
+echo "source profile"
+. ~/.profile
