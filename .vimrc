@@ -31,6 +31,7 @@ Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'dccmx/google-style.vim'
 Bundle 'JSON.vim'
 Bundle 'dccmx/vim-lemon-syntax'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'matchit.zip'
 Bundle 'dccmx/minibufexpl.vim'
 Bundle 'The-NERD-tree'
