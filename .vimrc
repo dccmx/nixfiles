@@ -296,7 +296,7 @@ map <leader>cd :cd %:p:h<CR>
 function! Goformat()
     let view = winsaveview()
     let regel=line(".")
-    silent %!gofmt -tabwidth=2 -tabs=false
+    silent %!gofmt
     if v:shell_error
         let errors = []
         for line in getline(1, line('$'))
