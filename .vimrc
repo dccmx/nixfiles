@@ -21,11 +21,11 @@ Bundle 'a.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'AutoComplPop'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'kien/ctrlp.vim'
 Bundle 'DirDiff.vim'
 Bundle 'dccmx/DrawIt'
 Bundle 'sudo.vim'
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'dccmx/google-style.vim'
@@ -260,14 +260,12 @@ nmap <F3> :Ack <CR>
 nmap <F4> :Ack <cword> %<CR> 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
+nmap <C-f> :CtrlP<cr>
 nnoremap <leader>a :Ack 
 nmap <leader>H <Esc>:A!<CR>
 nmap <leader>f <Esc>:GoFmt<CR>
 nmap <leader>tl <Esc>:TagbarToggle<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
-nmap <leader>ff :FufFileWithFullCwd<CR>
-nmap <leader>ftf :FufTaggedFile<CR>
-nmap <leader>ft :FufTag<CR>
 nmap <leader>el :cw<CR>
 nmap <leader>se :Errors<CR><C-j>
 nmap <leader>en :cn<CR>
