@@ -260,10 +260,10 @@ nmap <F3> :Ack <CR>
 nmap <F4> :Ack <cword> %<CR> 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
-nmap <C-f> :CtrlP<cr>
 nnoremap <leader>a :Ack 
 nmap <leader>H <Esc>:A!<CR>
-nmap <leader>f <Esc>:GoFmt<CR>
+nmap <leader>f :CtrlP<cr>
+nmap <leader>gf <Esc>:GoFmt<CR>
 nmap <leader>tl <Esc>:TagbarToggle<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>el :cw<CR>
