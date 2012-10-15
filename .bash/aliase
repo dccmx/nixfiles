@@ -30,10 +30,12 @@ alias Xdefaults="xrdb -load ~/.Xdefaults"
 if [[ $OSTYPE == linux-gnu ]]; then
   alias update='sudo apt-get update'
   alias install='sudo apt-get install'
+  alias remove='sudo apt-get remove'
   alias upgrade='sudo apt-get upgrade'
 elif [[ $OSTYPE == darwin* ]]; then
   alias update='brew update'
   alias install='brew install'
+  alias remove='brew remove'
   alias upgrade='brew upgrade'
 fi
 
@@ -44,9 +46,4 @@ alias info='info --vi-keys'
 alias c='clear'
 
 ##
-alias shut='sudo shutdown -h'
-alias rest='sudo shutdown -r'
-
-##
 alias home='cd ~'
-
