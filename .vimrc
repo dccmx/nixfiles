@@ -291,34 +291,6 @@ map <leader>cd :cd %:p:h<CR>
 
 " Autocommands {{{
 
-function! Goformat()
-    let view = winsaveview()
-    let regel=line(".")
-    silent %!gofmt
-    if v:shell_error
-        let errors = []
-        for line in getline(1, line('$'))
-            let tokens = matchlist(line, '^\(.\{-}\):\(\d\+\):\(\d\+\)\s*\(.*\)')
-            if !empty(tokens)
-                call add(errors, {"filename": @%,
-                                 \"lnum":     tokens[2],
-                                 \"col":      tokens[3],
-                                 \"text":     tokens[4]})
-            endif
-        endfor
-        if empty(errors)
-            % | " Couldn't detect gofmt error format, output errors
-        endif
-        undo
-        if !empty(errors)
-            call setloclist(0, errors, 'r')
-        endif
-        echohl Error | echomsg "Gofmt returned error" | echohl None
-    endif
-    call winrestview(view)
-    call cursor(regel, 1)
-endfunction
-
 autocmd FileType * set formatoptions-=ro
 autocmd FileType ragel set nocindent
 autocmd FileType lemon set nocindent noai indentkeys=
@@ -333,8 +305,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 "autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
-autocmd Filetype go command! GoFmt call Goformat()
-autocmd BufWritePre *.go GoFmt
+autocmd BufWritePre *.go Fmt
 
 " save when losing focus
 autocmd FocusLost * :wa
