@@ -26,6 +26,7 @@ Bundle 'DirDiff.vim'
 Bundle 'dccmx/DrawIt'
 Bundle 'sudo.vim'
 Bundle 'L9'
+Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'dccmx/google-style.vim'
