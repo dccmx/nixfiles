@@ -7,3 +7,5 @@
 	name = dccmx
 [push]
 	default = simple
+[color]
+	ui = true
