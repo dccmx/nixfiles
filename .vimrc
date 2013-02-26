@@ -205,7 +205,7 @@ let NERDTreeWinPos="right"
 let g:syntastic_check_on_open=1
 let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_c_compiler_options=' -D_GNU_SOURCE -std=c99 -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
-let g:syntastic_python_checker_args = '--ignore=E501'
+let g:syntastic_python_flake8_args='--ignore=E501'
 " }}}
 
 " ack {{{
