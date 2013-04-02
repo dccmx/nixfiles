@@ -44,8 +44,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
 
 filetype plugin indent on     " required!
 " }}}
