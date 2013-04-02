@@ -2,11 +2,18 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+##
+alias push='git push'
+alias pull='git pull'
+alias commit='git commit -a -m'
+
 ##
 alias ls='ls -hp'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls'
+
 ##
 alias back='cd $OLDPWD'
 alias cd..='cd ..'
@@ -14,6 +21,7 @@ alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias ..='cd ..'
+
 ## 
 alias grep='grep --color=auto'
 alias ncmpc='ncmpc -c'
