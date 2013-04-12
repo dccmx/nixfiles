@@ -86,10 +86,16 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set hidden " you can change buffers without saving
 "set mouse=a "don't use mouse everywhere
+
 set wildmenu " turn on command line completion wild style
+set wildmode=full
 " ignore these list file extensions
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
-set wildmode=full
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
+
 set autowrite
 set autoread
 " set ttyfast
