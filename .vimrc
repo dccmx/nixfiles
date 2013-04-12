@@ -19,8 +19,6 @@ Bundle 'gmarik/vundle'
 " my bundles
 Bundle 'a.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'AutoComplPop'
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'kien/ctrlp.vim'
 Bundle 'DirDiff.vim'
 Bundle 'dccmx/DrawIt'
@@ -44,6 +42,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on     " required!
 " }}}
@@ -205,6 +204,11 @@ let g:syntastic_check_on_open=1
 let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_c_compiler_options=' -D_GNU_SOURCE -std=c99 -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_python_flake8_args='--ignore=E501'
+" }}}
+
+" YouCompleteMe {{{
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " }}}
 
 " ack {{{
