@@ -12,7 +12,5 @@
 [user]
 	email = dccmx@dccmx.com
 	name = dccmx
-[push]
-	default = simple
 [color]
 	ui = true
