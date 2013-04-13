@@ -19,32 +19,30 @@ Bundle 'gmarik/vundle'
 " my bundles
 Bundle 'a.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'AutoComplPop'
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'kien/ctrlp.vim'
 Bundle 'DirDiff.vim'
 Bundle 'dccmx/DrawIt'
 Bundle 'sudo.vim'
 Bundle 'L9'
-Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'dccmx/google-style.vim'
 Bundle 'JSON.vim'
 Bundle 'dccmx/vim-lemon-syntax'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'dccmx/vim-puppet'
 Bundle 'matchit.zip'
 Bundle 'dccmx/minibufexpl.vim'
 Bundle 'The-NERD-tree'
 Bundle 'garyharan/vim-proto'
+Bundle 'EasyGrep'
 Bundle 'msteinert/vim-ragel'
 Bundle 'scratch.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on     " required!
 " }}}
@@ -88,10 +86,16 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set hidden " you can change buffers without saving
 "set mouse=a "don't use mouse everywhere
+
 set wildmenu " turn on command line completion wild style
+set wildmode=full
 " ignore these list file extensions
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
-set wildmode=full
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
+
 set autowrite
 set autoread
 " set ttyfast
@@ -205,7 +209,12 @@ let NERDTreeWinPos="right"
 let g:syntastic_check_on_open=1
 let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
 let g:syntastic_c_compiler_options=' -D_GNU_SOURCE -std=c99 -I ./lib -I ../lib -I../src -I./src -I./include -I../include -I../deps -I../../deps -I. -I.. -I../.. -I../../.. -I../../../.. -I../../../../..'
-let g:syntastic_python_checker_args = '--ignore=E501'
+let g:syntastic_python_flake8_args='--ignore=E501'
+" }}}
+
+" YouCompleteMe {{{
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " }}}
 
 " ack {{{
@@ -299,13 +308,11 @@ autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go set makeprg=go\ build
 
 " omnifunc settings
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
 autocmd BufWritePre *.go Fmt
 
 " save when losing focus

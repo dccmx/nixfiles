@@ -12,3 +12,5 @@
 [user]
 	email = dccmx@dccmx.com
 	name = dccmx
+[color]
+	ui = true

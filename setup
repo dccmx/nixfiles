@@ -47,6 +47,10 @@ else
   echo "vimproc unsupport this platform: $OSTYPE"
 fi
 
+echo "compile YouCompleteMe"
+
+cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+
 if [ ! -f ~/.profile ]; then
   echo "source ~/.bashrc" >>~/.profile
 fi
