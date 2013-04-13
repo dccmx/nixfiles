@@ -308,13 +308,11 @@ autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go set makeprg=go\ build
 
 " omnifunc settings
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c setlocal omnifunc=ccomplete#Complete (use clang complete)
 autocmd BufWritePre *.go Fmt
 
 " save when losing focus
