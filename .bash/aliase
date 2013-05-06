@@ -9,10 +9,10 @@ alias pull='git pull'
 alias commit='git commit -a -m'
 
 ##
-alias ls='ls -hp'
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls'
+alias ls='ls -hp --color'
+alias ll='ls -l --color'
+alias la='ls -A --color'
+alias l='ls --color'
 
 ##
 alias back='cd $OLDPWD'
