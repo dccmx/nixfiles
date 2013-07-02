@@ -6,6 +6,7 @@ alias mv='mv -i'
 ##
 alias push='git push'
 alias pull='git pull'
+alias checkout='git checkout'
 alias commit='git commit -a -m'
 
 ##
