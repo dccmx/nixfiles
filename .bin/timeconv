@@ -22,7 +22,7 @@ def totimestamp(s):
 
 def main():
     if not len(sys.argv) == 2:
-        print 'Usage: %s value' % sys.argv[0]
+        print int(time.time())
         return
     ts = None
     dt = None
