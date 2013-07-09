@@ -1,9 +1,7 @@
-## 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-##
 alias add='git add'
 alias push='git push'
 alias pull='git pull'
@@ -11,13 +9,11 @@ alias status='git status'
 alias checkout='git checkout'
 alias commit='git commit -a -m'
 
-##
 alias ls='ls -hp --color'
 alias ll='ls -l --color'
 alias la='ls -A --color'
 alias l='ls --color'
 
-##
 alias back='cd $OLDPWD'
 alias cd..='cd ..'
 alias df='df -h'
@@ -25,19 +21,17 @@ alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias ..='cd ..'
 
-## 
 alias grep='grep --color=auto'
 alias ncmpc='ncmpc -c'
 alias daemons='ls /var/run/daemons'
 alias ping='ping -c 5'
 alias more='less'
 
-##
 alias pgrep="pgrep -l"
 alias recent="ls -lAt | head"
 alias Xdefaults="xrdb -load ~/.Xdefaults"
 
-## update package
+# package management
 if [[ $OSTYPE == linux-gnu ]]; then
   alias update='sudo apt-get update'
   alias install='sudo apt-get install'
@@ -50,11 +44,8 @@ elif [[ $OSTYPE == darwin* ]]; then
   alias upgrade='brew upgrade'
 fi
 
-##
 alias info='info --vi-keys'
 
-##
 alias c='clear'
 
-##
 alias home='cd ~'
