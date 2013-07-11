@@ -356,11 +356,6 @@ if has('win32') || has('win64')
   autocmd GUIEnter * simalt ~x "启动时最大化窗口
 endif
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
