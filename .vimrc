@@ -302,6 +302,7 @@ nnoremap <leader>a :Ack
 nmap <leader>H <Esc>:A!<CR>
 nmap <leader>f :CtrlP<cr>
 nmap <leader>git :Gitv<cr>
+nmap git :Gitv!<cr>
 nmap <leader>gf <Esc>:GoFmt<CR>
 nmap <leader>gg :GitGutterToggle<CR>
 nmap <leader>tl <Esc>:TagbarToggle<CR>
