@@ -21,26 +21,39 @@ Bundle 'a.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'DirDiff.vim'
+
+Bundle 'scratch.vim'
 Bundle 'dccmx/DrawIt'
-Bundle 'sudo.vim'
+
+Bundle 'junegunn/vim-easy-align'
+Bundle 'bronson/vim-visual-star-search'
+Bundle 'EasyGrep'
+
 Bundle 'L9'
-Bundle 'jnwhiteh/vim-golang'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'dccmx/google-style.vim'
+Bundle 'scrooloose/syntastic'
+
 Bundle 'JSON.vim'
+Bundle 'jnwhiteh/vim-golang'
 Bundle 'dccmx/vim-lemon-syntax'
 Bundle 'plasticboy/vim-markdown'
+Bundle "pangloss/vim-javascript"
 Bundle 'rodjek/vim-puppet'
+Bundle 'garyharan/vim-proto'
+Bundle 'msteinert/vim-ragel'
+
+Bundle 'Yggdroot/indentLine'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'matchit.zip'
 Bundle 'dccmx/minibufexpl.vim'
 Bundle 'The-NERD-tree'
-Bundle 'garyharan/vim-proto'
-Bundle 'EasyGrep'
-Bundle 'msteinert/vim-ragel'
-Bundle 'scratch.vim'
-Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
+
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
+Bundle 'airblade/vim-gitgutter'
+
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Valloric/YouCompleteMe'
 
@@ -164,6 +177,10 @@ set tabstop=2 " real tabs should be 8, and they will show with  set list on
 
 " Plugin Settings {{{
 
+" git gutter {{{
+let g:gitgutter_enabled = 0
+" }}}
+
 " Powerline Settings {{{
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'filename'
@@ -236,6 +253,8 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 " save me from SHIFT
 nnoremap ; :
 
+vnoremap <silent> <Enter> :EasyAlign<cr>
+
 set pastetoggle=<F2>
 
 cmap w!! w !sudo tee % >/dev/null
@@ -282,16 +301,21 @@ nmap <F10> :SCCompileRun<cr>
 nnoremap <leader>a :Ack 
 nmap <leader>H <Esc>:A!<CR>
 nmap <leader>f :CtrlP<cr>
+nmap <leader>git :Gitv<cr>
 nmap <leader>gf <Esc>:GoFmt<CR>
+nmap <leader>gg :GitGutterToggle<CR>
 nmap <leader>tl <Esc>:TagbarToggle<CR>
 nmap <leader>fl <Esc>:NERDTreeToggle<CR>
 nmap <leader>el :cw<CR>
 nmap <leader>se :Errors<CR><C-j>
-nmap <leader>en :cn<CR>
-nmap <leader>ep :cp<CR>
-nmap <leader>ec :cclose<CR>
-nmap <leader>es :Errors<CR>
+nmap en :cn<CR>
+nmap ep :cp<CR>
+nmap ec :cclose<CR>
+nmap es :Errors<CR>
 nmap <leader><space> :make<CR>
+
+nmap gn <Plug>GitGutterNextHunk
+nmap gp <Plug>GitGutterPrevHunk
 
 "Window Switch{{{
 noremap <C-j> <C-w>j
@@ -330,6 +354,12 @@ autocmd FocusLost * :wa
 if has('win32') || has('win64')
   autocmd GUIEnter * simalt ~x "启动时最大化窗口
 endif
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
