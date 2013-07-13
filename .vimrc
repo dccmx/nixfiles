@@ -46,7 +46,7 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'matchit.zip'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'The-NERD-tree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 
 Bundle 'tpope/vim-fugitive'
