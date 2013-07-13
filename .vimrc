@@ -29,7 +29,6 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'bronson/vim-visual-star-search'
 Bundle 'EasyGrep'
 
-Bundle 'L9'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'dccmx/google-style.vim'
 Bundle 'scrooloose/syntastic'
@@ -46,7 +45,7 @@ Bundle 'msteinert/vim-ragel'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'matchit.zip'
-Bundle 'dccmx/minibufexpl.vim'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'The-NERD-tree'
 Bundle 'majutsushi/tagbar'
 
@@ -176,6 +175,10 @@ set tabstop=2 " real tabs should be 8, and they will show with  set list on
 " }}}
 
 " Plugin Settings {{{
+
+" minibufexpl {{{
+let g:miniBufExplorerHideWhenDiff = 1
+" }}}
 
 " git gutter {{{
 let g:gitgutter_enabled = 0
