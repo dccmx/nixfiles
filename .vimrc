@@ -23,7 +23,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'DirDiff.vim'
 
 Bundle 'scratch.vim'
-Bundle 'dccmx/DrawIt'
+Bundle 'DrawIt'
 
 Bundle 'junegunn/vim-easy-align'
 Bundle 'bronson/vim-visual-star-search'
