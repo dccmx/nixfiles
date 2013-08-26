@@ -53,7 +53,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'gregsexton/gitv'
 Bundle 'airblade/vim-gitgutter'
 
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on     " required!
@@ -184,10 +184,9 @@ let g:miniBufExplorerHideWhenDiff = 1
 let g:gitgutter_enabled = 0
 " }}}
 
-" Powerline Settings {{{
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_stl_path_style = 'filename'
-call Pl#Theme#InsertSegment('pwd', 'before', 'fileformat')
+" Airline Settings {{{
+set ttimeoutlen=50
+let g:airline_powerline_fonts = 1
 " }}}
 
 " TagBar Settings {{{

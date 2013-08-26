@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # make links first
 command_exists () {
   type "$1" &> /dev/null ;
