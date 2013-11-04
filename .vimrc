@@ -27,15 +27,15 @@ Bundle 'DrawIt'
 
 Bundle 'junegunn/vim-easy-align'
 Bundle 'bronson/vim-visual-star-search'
-Bundle 'EasyGrep'
 
-Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'fsouza/go.vim'
 Bundle 'dccmx/google-style.vim'
 Bundle 'scrooloose/syntastic'
 
 Bundle 'JSON.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'dccmx/vim-lemon-syntax'
+Bundle 'dccmx/nginx.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle "pangloss/vim-javascript"
 Bundle 'rodjek/vim-puppet'
@@ -280,8 +280,8 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 " Make Arrow Keys Useful Again {{{
 map <down> <ESC>:MBEbd<CR>
 map <up> <ESC>:Scratch<CR>
-map <right> <ESC>:MBEbn<CR>
-map <left> <ESC>:MBEbp<CR>
+map <right> <ESC>:bn!<CR>
+map <left> <ESC>:bp!<CR>
 map <space> <ESC>:b#<CR>
 map <leader>bd <ESC>:call CloseTab()<CR>
 func! CloseTab()
