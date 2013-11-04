@@ -31,23 +31,6 @@ fi
 echo "install vim bundles"
 vim +BundleInstall +qall
 
-echo "compile vimproc"
-# compile vim plugins
-cd ~/.vim/bundle/vimproc
-if [[ $OSTYPE == linux-gnu ]]; then
-  make -f make_unix.mak
-elif [[ $OSTYPE == darwin* ]]; then
-  make -f make_mac.mak
-elif [[ $OSTYPE == cygwin ]]; then
-  make -f make_cygwin.mak
-elif [[ $OSTYPE == win32 ]]; then
-  make -f make_msvc32.mak
-elif [[ $OSTYPE == freebsd ]]; then
-  make -f make_unix.mak
-else
-  echo "vimproc unsupport this platform: $OSTYPE"
-fi
-
 echo "compile YouCompleteMe"
 
 cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
