@@ -33,7 +33,7 @@ vim +BundleInstall +qall
 
 echo "compile YouCompleteMe"
 
-cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --clang-completer
 
 if [ ! -f ~/.profile ]; then
   echo "source ~/.bashrc" >>~/.profile
