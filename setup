@@ -33,7 +33,11 @@ vim +BundleInstall +qall
 
 echo "compile YouCompleteMe"
 
-cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --clang-completer
+if [[ $OSTYPE == linux-gnu ]]; then
+  cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --clang-completer
+elif [[ $OSTYPE == darwin* ]]; then
+  cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --clang-completer --system-libclang
+fi
 
 if [ ! -f ~/.profile ]; then
   echo "source ~/.bashrc" >>~/.profile
