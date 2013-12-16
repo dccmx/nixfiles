@@ -41,6 +41,7 @@ Bundle "pangloss/vim-javascript"
 Bundle 'rodjek/vim-puppet'
 Bundle 'garyharan/vim-proto'
 Bundle 'msteinert/vim-ragel'
+Bundle 'fisadev/vim-isort'
 
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -300,6 +301,7 @@ nmap <F3> :Ack <CR>
 nmap <F4> :Ack <cword> %<CR> 
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
+nmap <C-i> :Isort<cr> 
 nnoremap <leader>a :Ack 
 nmap <leader>H <Esc>:A!<CR>
 nmap <leader>f :CtrlP<cr>
