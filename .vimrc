@@ -239,6 +239,10 @@ let g:syntastic_cpp_include_dirs = [ 'include', '../include', 'lib', '../lib', '
 let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE'
 
 let g:syntastic_python_flake8_args='--ignore=E501'
+
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'active_filetypes': [],
+      \ 'passive_filetypes': ['java'] }
 " }}}
 
 " YouCompleteMe {{{
