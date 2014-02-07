@@ -9,10 +9,17 @@ alias status='git status'
 alias checkout='git checkout'
 alias commit='git commit -a -m'
 
-alias ls='ls -hp --color'
-alias ll='ls -l --color'
-alias la='ls -A --color'
-alias l='ls --color'
+if [[ $OSTYPE == linux-gnu ]]; then
+  alias ls='ls -hp --color'
+  alias ll='ls -l --color'
+  alias la='ls -A --color'
+  alias l='ls --color'
+elif [[ $OSTYPE == darwin* ]]; then
+  alias ls='ls -Gp'
+  alias ll='ls -l'
+  alias la='ls -A'
+  alias l='ls'
+fi
 
 alias back='cd $OLDPWD'
 alias cd..='cd ..'
