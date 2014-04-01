@@ -42,6 +42,7 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'garyharan/vim-proto'
 Bundle 'msteinert/vim-ragel'
 Bundle 'fisadev/vim-isort'
+Bundle 'shmay/vim-yaml'
 
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/rainbow_parentheses.vim'
