@@ -256,6 +256,13 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ackprg="ack -H --nocolor --nogroup --column"
 " }}}
 
+" identLine {{{
+let g:indentLine_color_term = 239
+let g:indentLine_color_tty = 239
+let g:indentLine_color_gui = '#808080'
+let g:indentLine_char = '¦'
+" }}}
+
 " }}}
 
 " Mappings {{{
