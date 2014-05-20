@@ -25,7 +25,7 @@ fi
 # get vim bundles
 if [ ! -f ~/.vim/bundle/vundle ]; then
   echo "install vundle"
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 echo "install vim bundles"
