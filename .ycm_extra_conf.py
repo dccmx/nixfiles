@@ -9,7 +9,16 @@ flags = [
     '-std=c++11',
     '-stdlib=libc++',
     '-x', 'c++',
+
     '-isystem', '/usr/lib/c++/v1',
+    '-isystem', '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
+    '-isystem', '/usr/local/include',
+    '-isystem', '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/include',
+    '-isystem', '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
+    '-isystem', '/usr/include',
+    '-isystem', '/System/Library/Frameworks',
+    '-isystem', '/Library/Frameworks',
+
     '-I', '.',
     '-I', '..',
     '-I', '../..',
