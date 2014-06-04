@@ -21,6 +21,8 @@ elif [[ $OSTYPE == darwin* ]]; then
   alias l='ls'
 fi
 
+alias tree='tree -C'
+
 alias back='cd $OLDPWD'
 alias cd..='cd ..'
 alias df='df -h'
