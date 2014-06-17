@@ -311,7 +311,7 @@ endif
 vnoremap p <Esc>:let current_regg@"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Make Arrow Keys Useful Again {{{
-map <down> <ESC>:MBEbd<CR>
+map <down> <ESC>:bd<CR>
 map <up> <ESC>:Scratch<CR>
 map <right> <ESC>:MBEbn<CR>
 map <left> <ESC>:MBEbp<CR>
