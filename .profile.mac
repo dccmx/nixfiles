@@ -1,0 +1,16 @@
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export GOPATH=$HOME/Documents/Projects/go
+
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
+alias vi='mvim -v'
+alias vim='mvim -v'
