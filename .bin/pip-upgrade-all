@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pip list -o | awk '{print $1}' | xargs pip install --upgrade
+pip list -o $@ | grep -v Some | grep -v Could | awk '{print $1}' | xargs pip install --upgrade
