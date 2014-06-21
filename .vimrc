@@ -45,6 +45,7 @@ Plugin 'fisadev/vim-isort'
 Plugin 'shmay/vim-yaml'
 Plugin 'tfnico/vim-gradle'
 Plugin 'othree/html5.vim'
+Plugin 'derekwyatt/vim-scala'
 
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
