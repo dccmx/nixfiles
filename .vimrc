@@ -32,6 +32,8 @@ Plugin 'fsouza/go.vim'
 Plugin 'dccmx/google-style.vim'
 Plugin 'scrooloose/syntastic'
 
+Plugin 'haproxy'
+Plugin 'smerrill/vcl-vim-plugin'
 Plugin 'elzr/vim-json'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'dccmx/vim-lemon-syntax'

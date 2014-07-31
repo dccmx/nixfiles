@@ -1,4 +1,4 @@
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export GOPATH=$HOME/Documents/Projects/go
 
@@ -14,3 +14,6 @@ fi
 
 alias vi='mvim -v'
 alias vim='mvim -v'
+export CFB_HOSTNAME=zhihu
+
+. /usr/local/bin/goto.sh
