@@ -49,6 +49,7 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'othree/html5.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'derekwyatt/vim-sbt'
+Plugin 'jimmyhchan/dustjs.vim'
 
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
