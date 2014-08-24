@@ -1,18 +1,20 @@
+[core]
+  mergeoptions = --no-edit
 [diff]
-    external = git_diff_wrapper
+  external = git_diff_wrapper
 [pager]
-    diff =
+  diff =
 [alias]
-    st = status -sb
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  st = status -sb
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [user]
-	email = dccmx@dccmx.com
-	name = dccmx
+  email = dccmx@dccmx.com
+  name = dccmx
 [color]
-	ui = true
+  ui = true
 [push]
-	default = matching
+  default = matching
