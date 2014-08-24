@@ -1,5 +1,5 @@
 if [[ $OSTYPE == linux-gnu ]]; then
-  if [ -f "$HOME/.profile.linu" ]; then
+  if [ -f "$HOME/.profile.linux" ]; then
     . "$HOME/.profile.linux"
   fi
 elif [[ $OSTYPE == darwin* ]]; then
@@ -15,8 +15,8 @@ fi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-      . "$HOME/.bashrc"
-    fi
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
 fi

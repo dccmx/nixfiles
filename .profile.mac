@@ -1,3 +1,8 @@
+alias vi='mvim -v'
+alias vim='mvim -v'
+export EDITOR="mvim -v"
+export MANPAGER="/bin/sh -c \"col -b | mvim -v -c 'set ft=man nonu nolist shortmess+=T' -\""
+
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export GOPATH=$HOME/Documents/Projects/go
@@ -12,8 +17,6 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-alias vi='mvim -v'
-alias vim='mvim -v'
 export CFB_HOSTNAME=zhihu
 
 . /usr/local/bin/goto.sh
