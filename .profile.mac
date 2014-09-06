@@ -10,6 +10,8 @@ export GOPATH=$HOME/Documents/Projects/go
 export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
+export DOCKER_HOST=tcp://192.168.59.103:2375
+
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
