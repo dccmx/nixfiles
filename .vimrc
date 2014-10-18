@@ -50,6 +50,7 @@ Plugin 'othree/html5.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'derekwyatt/vim-sbt'
 Plugin 'jimmyhchan/dustjs.vim'
+Plugin 'hail2u/vim-css3-syntax'
 
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -395,6 +396,11 @@ autocmd FocusLost * :wa
 if has('win32') || has('win64')
   autocmd GUIEnter * simalt ~x "启动时最大化窗口
 endif
+
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 
 " Reread configuration of Vim if .vimrc is saved {{{
