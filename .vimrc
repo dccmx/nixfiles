@@ -258,7 +258,13 @@ let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE'
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
 
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-",
+      \"trimming empty <i>",
+      \"trimming empty <span>",
+      \"<input> proprietary attribute \"autocomplete\"",
+      \"proprietary attribute \"role\"",
+      \"proprietary attribute \"hidden\"",
+      \]
 
 let g:syntastic_mode_map={ 'mode': 'active',
       \ 'active_filetypes': [],
