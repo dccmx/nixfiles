@@ -58,3 +58,5 @@ alias info='info --vi-keys'
 alias c='clear'
 
 alias home='cd ~'
+
+alias httpserver='python -m SimpleHTTPServer'
