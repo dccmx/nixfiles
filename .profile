@@ -20,3 +20,5 @@ if [ -n "$BASH_VERSION" ]; then
     . "$HOME/.bashrc"
   fi
 fi
+
+export LANG=en_US.UTF-8
