@@ -3,7 +3,7 @@ alias vim='mvim -v'
 export EDITOR="mvim -v"
 export MANPAGER="/bin/sh -c \"col -b | mvim -v -c 'set ft=man nonu nolist shortmess+=T' -\""
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_72.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export GOPATH=$HOME/Documents/Projects/go
 

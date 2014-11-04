@@ -260,6 +260,7 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 
 let g:syntastic_html_tidy_ignore_errors=[
       \" proprietary attribute \"ng-",
+      \" proprietary attribute \"md-",
       \"trimming empty <i>",
       \"trimming empty <span>",
       \"<input> proprietary attribute \"autocomplete\"",
