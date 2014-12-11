@@ -51,6 +51,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'derekwyatt/vim-sbt'
 Plugin 'jimmyhchan/dustjs.vim'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'chrisbra/csv.vim'
 
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/rainbow_parentheses.vim'
