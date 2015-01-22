@@ -200,7 +200,6 @@ let g:gitgutter_enabled=0
 
 " Airline Settings {{{
 set ttimeoutlen=50
-let g:airline_powerline_fonts=1
 " }}}
 
 " TagBar Settings {{{
