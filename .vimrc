@@ -59,6 +59,9 @@ Plugin 'matchit.zip'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmtlib'
+Plugin 'google/vim-codefmt'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
@@ -392,6 +395,7 @@ autocmd FileType ragel  set nocindent
 autocmd FileType lemon  set nocindent noai indentkeys=
 autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go     set makeprg=go\ build
+autocmd FileType c let b:codefmt_formatter = 'clang-format'
 
 " omnifunc settings
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
