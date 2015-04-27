@@ -40,6 +40,7 @@ Plugin 'dccmx/vim-lemon-syntax'
 Plugin 'dccmx/nginx.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'rodjek/vim-puppet'
 Plugin 'garyharan/vim-proto'
 Plugin 'msteinert/vim-ragel'
@@ -397,6 +398,7 @@ autocmd FileType lemon  set nocindent noai indentkeys=
 autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go     set makeprg=go\ build
 autocmd FileType c let b:codefmt_formatter = 'clang-format'
+autocmd FileType  javascript.jsx  let b:syntastic_checkers=['jsxhint']
 
 " omnifunc settings
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
