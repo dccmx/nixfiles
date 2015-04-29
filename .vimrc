@@ -262,6 +262,8 @@ let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE'
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
 
+let g:syntastic_javascript_jsxhint_args='--es6module'
+
 let g:syntastic_html_tidy_ignore_errors=[
       \" proprietary attribute \"ng-",
       \" proprietary attribute \"md-",
