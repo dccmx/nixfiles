@@ -262,18 +262,7 @@ let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE'
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
 
-let g:syntastic_javascript_jsxhint_args='--es6module'
-
-let g:syntastic_html_tidy_ignore_errors=[
-      \" proprietary attribute \"ng-",
-      \" proprietary attribute \"md-",
-      \"trimming empty <i>",
-      \"trimming empty <span>",
-      \"<input> proprietary attribute \"autocomplete\"",
-      \"proprietary attribute \"role\"",
-      \"proprietary attribute \"hidden\"",
-      \"<img> lacks \"src\" attribute",
-      \]
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:syntastic_mode_map={ 'mode': 'active',
       \ 'active_filetypes': [],
@@ -400,7 +389,6 @@ autocmd FileType lemon  set nocindent noai indentkeys=
 autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType go     set makeprg=go\ build
 autocmd FileType c let b:codefmt_formatter = 'clang-format'
-autocmd FileType  javascript.jsx  let b:syntastic_checkers=['jsxhint']
 
 " omnifunc settings
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
