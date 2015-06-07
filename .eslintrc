@@ -194,6 +194,7 @@
         "mixins",
         "statics",
         "propTypes",
+        "constructor",
         "getDefaultProps",
         "getInitialState",
         "componentWillMount",
