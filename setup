@@ -15,6 +15,12 @@ do
   ln -s -i $PWD/$dotfile ~
 done
 
+if command_exists npm; then
+  npm install -g eslint
+  npm install -g babel-eslint
+  npm install -g eslint-plugin-react
+fi
+
 if command_exists go; then
   if ! command_exists gocode; then
     echo "install gocode"
