@@ -7,6 +7,9 @@
     "browser": true,
     "node": true
   },
+  "globals": {
+    "$": false
+  },
   "ecmaFeatures": {
     "arrowFunctions": true,
     "blockBindings": true,
