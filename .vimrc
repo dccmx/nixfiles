@@ -52,6 +52,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'derekwyatt/vim-sbt'
 Plugin 'jimmyhchan/dustjs.vim'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'wavded/vim-stylus'
 Plugin 'chrisbra/csv.vim'
 
 Plugin 'Yggdroot/indentLine'
