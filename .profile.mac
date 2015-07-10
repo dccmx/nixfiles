@@ -4,7 +4,7 @@ export EDITOR="mvim -v"
 export MANPAGER="/bin/sh -c \"col -b | mvim -v -c 'set ft=man nonu nolist shortmess+=T' -\""
 
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export GOPATH=$HOME/Documents/Projects/go
+export GOPATH=$HOME/Projects/go
 
 export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
