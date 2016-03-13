@@ -8,6 +8,7 @@ alias pull='git pull'
 alias status='git status'
 alias checkout='git checkout'
 alias commit='git commit -a -m'
+alias pretty-json='python -m json.tool'
 
 if [[ $OSTYPE == linux-gnu ]]; then
   alias ls='ls -hp --color'
