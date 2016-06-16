@@ -1,16 +1,12 @@
 [core]
   mergeoptions = --no-edit
-[diff]
-  external = git_diff_wrapper
-[pager]
-  diff =
 [alias]
   st = status -sb
   ci = commit
   br = branch
   co = checkout
-  df = diff
   lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  df = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [user]
   email = dccmx@dccmx.com
   name = dccmx
