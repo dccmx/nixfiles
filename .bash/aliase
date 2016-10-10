@@ -51,7 +51,7 @@ elif [[ $OSTYPE == darwin* ]]; then
   alias update='brew update'
   alias install='brew install'
   alias remove='brew remove'
-  alias upgrade='brew upgrade --all'
+  alias upgrade='brew upgrade'
 fi
 
 alias info='info --vi-keys'
