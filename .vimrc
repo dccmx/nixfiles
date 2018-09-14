@@ -27,13 +27,12 @@ Plug 'bronson/vim-visual-star-search'
 
 Plug 'fsouza/go.vim'
 Plug 'dccmx/google-style.vim'
-Plug 'scrooloose/syntastic'
 
 Plug 'elzr/vim-json'
 Plug 'jnwhiteh/vim-golang'
 Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
-Plug 'dccmx/vim-jsx'
+Plug 'mxw/vim-jsx'
 Plug 'garyharan/vim-proto'
 Plug 'msteinert/vim-ragel'
 Plug 'stephpy/vim-yaml'
@@ -44,18 +43,19 @@ Plug 'leafgarland/typescript-vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'chrisbra/csv.vim'
 
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'fholgado/minibufexpl.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
 Plug 'airblade/vim-gitgutter'
-
 Plug 'bling/vim-airline'
+
+Plug 'w0rp/ale'
 
 call plug#end()
 " }}}
@@ -189,6 +189,7 @@ let g:gitgutter_enabled=0
 
 " Airline Settings {{{
 set ttimeoutlen=50
+let g:airline#extensions#ale#enabled = 1
 " }}}
 
 " TagBar Settings {{{
@@ -226,33 +227,13 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeWinPos="right"
 " }}}
 
-" Syntastic {{{
-let g:syntastic_error_symbol='✗'
-let g:syntastic_style_error_symbol='‼'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_warning_symbol='!'
+" ale {{{
+let g:ale_linters = {'python': ['flake8']}
+let g:ale_lint_delay = 1000
+let g:ale_sign_warning = '‼'
+let g:ale_sign_error = 'X'
 
-let g:syntastic_check_on_open=1
-
-let g:syntastic_c_check_header=1
-let g:syntastic_c_auto_refresh_includes=1
-let g:syntastic_c_include_dirs=[ 'include', '../include', 'lib', '../lib', 'src', '../src', '../deps', '../../deps', '.', '..', '../..', '../../..', '../../../..', '../../../../..']
-let g:syntastic_c_compiler_options=' -D_GNU_SOURCE -std=c99'
-
-let g:syntastic_cpp_check_header=1
-let g:syntastic_cpp_auto_refresh_includes=1
-let g:syntastic_cpp_include_dirs=[ 'include', '../include', 'lib', '../lib', 'src', '../src', '../deps', '../../deps', '.', '..', '../..', '../../..', '../../../..', '../../../../..']
-let g:syntastic_cpp_compiler_options=' -D_GNU_SOURCE'
-
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501'
-
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_mode_map={ 'mode': 'active',
-      \ 'active_filetypes': [],
-      \ 'passive_filetypes': ['java', 'html', 'scala']
-      \}
+let g:ale_python_flake8_options='--ignore=E501'
 " }}}
 
 " YouCompleteMe {{{
