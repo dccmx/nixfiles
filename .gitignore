@@ -3,3 +3,5 @@ tags
 *.pyc
 tags-ja
 .vim/.netrwhist
+.vim/autoload
+.vim/plugged

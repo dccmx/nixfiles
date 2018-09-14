@@ -5,76 +5,61 @@
 "
 " }}}
 
-" Vundle {{{
-set nocompatible " be iMproved
-filetype off     " required!
+" vim-plug {{{
+" Load vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " my plugins
-Plugin 'FSwitch'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
+Plug 'vim-scripts/FSwitch'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
 
-Plugin 'scratch.vim'
-Plugin 'DrawIt'
+Plug 'vim-scripts/scratch.vim'
+Plug 'vim-scripts/DrawIt'
 
-Plugin 'junegunn/vim-easy-align'
-Plugin 'bronson/vim-visual-star-search'
+Plug 'junegunn/vim-easy-align'
+Plug 'bronson/vim-visual-star-search'
 
-Plugin 'fsouza/go.vim'
-Plugin 'dccmx/google-style.vim'
-Plugin 'scrooloose/syntastic'
+Plug 'fsouza/go.vim'
+Plug 'dccmx/google-style.vim'
+Plug 'scrooloose/syntastic'
 
-Plugin 'haproxy'
-Plugin 'smerrill/vcl-vim-plugin'
-Plugin 'elzr/vim-json'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'keith/swift.vim'
-Plugin 'dccmx/vim-lemon-syntax'
-Plugin 'dccmx/nginx.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'dccmx/vim-jsx'
-Plugin 'rodjek/vim-puppet'
-Plugin 'garyharan/vim-proto'
-Plugin 'msteinert/vim-ragel'
-Plugin 'fisadev/vim-isort'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'stephpy/vim-yaml'
-Plugin 'tfnico/vim-gradle'
-Plugin 'othree/html5.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'derekwyatt/vim-sbt'
-Plugin 'jimmyhchan/dustjs.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'wavded/vim-stylus'
-Plugin 'chrisbra/csv.vim'
-Plugin 'saltstack/salt-vim'
+Plug 'elzr/vim-json'
+Plug 'jnwhiteh/vim-golang'
+Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'dccmx/vim-jsx'
+Plug 'garyharan/vim-proto'
+Plug 'msteinert/vim-ragel'
+Plug 'fisadev/vim-isort'
+Plug 'stephpy/vim-yaml'
+Plug 'tfnico/vim-gradle'
+Plug 'othree/html5.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'leafgarland/typescript-vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'chrisbra/csv.vim'
 
-Plugin 'Yggdroot/indentLine'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'matchit.zip'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
+Plug 'Yggdroot/indentLine'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'gregsexton/gitv'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'bling/vim-airline'
-Plugin 'Valloric/YouCompleteMe'
+Plug 'bling/vim-airline'
 
-call vundle#end()         " required
-filetype plugin indent on " required!
+call plug#end()
 " }}}
 
 " Basics {{{

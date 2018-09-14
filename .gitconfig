@@ -12,3 +12,6 @@
   name = dccmx
 [color]
   ui = true
+[diff-so-fancy]
+	first-run = false
+
