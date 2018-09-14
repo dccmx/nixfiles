@@ -15,10 +15,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " my plugins
-Plug 'vim-scripts/FSwitch'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mileszs/ack.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'vim-scripts/scratch.vim'
 Plug 'vim-scripts/DrawIt'
@@ -37,7 +36,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'dccmx/vim-jsx'
 Plug 'garyharan/vim-proto'
 Plug 'msteinert/vim-ragel'
-Plug 'fisadev/vim-isort'
 Plug 'stephpy/vim-yaml'
 Plug 'tfnico/vim-gradle'
 Plug 'othree/html5.vim'
