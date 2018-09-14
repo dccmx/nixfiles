@@ -25,9 +25,9 @@ Plug 'vim-scripts/DrawIt'
 Plug 'junegunn/vim-easy-align'
 Plug 'bronson/vim-visual-star-search'
 
-Plug 'fsouza/go.vim'
 Plug 'dccmx/google-style.vim'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'elzr/vim-json'
 Plug 'jnwhiteh/vim-golang'
 Plug 'plasticboy/vim-markdown'
@@ -362,7 +362,6 @@ autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php        setlocal omnifunc=phpcomplete#CompletePHP
-autocmd BufWritePre *.go Fmt
 
 " save when losing focus
 autocmd FocusLost * :wa
