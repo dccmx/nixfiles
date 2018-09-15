@@ -179,10 +179,6 @@ set iskeyword+=_,$,@,%,#
 
 " Plugin Settings {{{
 
-" minibufexpl {{{
-let g:miniBufExplorerHideWhenDiff=1
-" }}}
-
 " git gutter {{{
 let g:gitgutter_enabled=0
 " }}}
@@ -195,10 +191,6 @@ let g:airline#extensions#ale#enabled = 1
 " TagBar Settings {{{
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
-" }}}
-
-" VimShell Settings {{{
-let g:vimshell_prompt=substitute('CWD$ ', 'CWD', CurDir(), 'g')
 " }}}
 
 " MiniBufExplorer Settings {{{
@@ -234,11 +226,6 @@ let g:ale_sign_warning = '‼'
 let g:ale_sign_error = 'X'
 
 let g:ale_python_flake8_options='--ignore=E501'
-" }}}
-
-" YouCompleteMe {{{
-let g:ycm_confirm_extra_conf=0
-let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 " }}}
 
 " ack.vim {{{
