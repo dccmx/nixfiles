@@ -15,35 +15,8 @@ do
   ln -s -i $PWD/$dotfile ~
 done
 
-if command_exists npm; then
-  npm install -g eslint
-  npm install -g babel-eslint
-  npm install -g eslint-plugin-react
-fi
-
-if command_exists go; then
-  if ! command_exists gocode; then
-    echo "install gocode"
-    go get -u github.com/nsf/gocode
-  fi
-fi
-
-# get vim bundles
-if [ ! -f ~/.vim/bundle/vundle ]; then
-  echo "install vundle"
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-echo "install vim bundles"
-vim +BundleInstall +qall
-
-echo "compile YouCompleteMe"
-
-if [[ $OSTYPE == linux-gnu ]]; then
-  cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
-elif [[ $OSTYPE == darwin* ]]; then
-  cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --system-libclang
-fi
+echo "install vim plugins"
+vim +PlugInstall +qall
 
 if [ ! -f ~/.profile ]; then
   echo "source ~/.bashrc" >>~/.profile
