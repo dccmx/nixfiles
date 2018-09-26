@@ -42,6 +42,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'leafgarland/typescript-vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'chrisbra/csv.vim'
+Plug 'Shougo/vinarise.vim'
 
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 Plug 'kien/rainbow_parentheses.vim'
