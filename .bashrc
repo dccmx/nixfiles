@@ -75,7 +75,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-#by dccmx
+# by dccmx
+
+if [ -f /usr/local/etc/bash_completion ] && ! shopt -oq posix; then
+  . /usr/local/etc/bash_completion
+fi
+
 set -o vi
 
 . ~/.bash/aliase
