@@ -1,0 +1,15 @@
+#!/bin/bash
+
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
+if ! command_exists zsh; then
+  echo "please install zsh first :-("
+  exit
+fi
+
+for f in `ls -a custom | grep ".zsh"`;
+do
+  ln -s -i $PWD/custom/$f ~/.oh-my-zsh/custom/$f
+done

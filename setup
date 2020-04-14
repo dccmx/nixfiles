@@ -15,6 +15,9 @@ do
   ln -s -i $PWD/$dotfile ~
 done
 
+cd zsh && ./setup
+cd ..
+
 echo "install vim plugins"
 vim +PlugInstall +qall
 
