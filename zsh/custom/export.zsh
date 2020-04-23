@@ -3,5 +3,6 @@ GODEP=`godep path 2>/dev/null`
 if [ -n "$GODEP" ]; then
   export GOPATH=$GODEP:$GOPATH
 fi
-export GOPATH=$HOME/go:$GOPATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export TERM=xterm-256color
